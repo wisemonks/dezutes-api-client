@@ -9,12 +9,18 @@ Slaptazodis - md5 raktas, sugeneruotas Dezutes.lt sistemos.
 Instrukcijos kaip naudotis PHP API klientu:
 <?php
 require_once 'dezutes.client.php';
+#XML dokumento parsinimui rekomenduojame PEAR XML_Serializer biblioteka
+require_once 'XML/Unserializer.php';
 
 $dezutes = new DezutesClient('ntagentura', '8727h3bggvv4hgv9jg3hgfg2mnb4');
 /*
-Paprasom atiduoti informacija apie 25 pigiausius namus
+Paprasom atiduoti informacija apie 25 pigiausius parduodamus namus
 */
-$estates = $dezutes -> getEstates(array('estate_type' => 'houses', 'sort_by' => 'sale_price', 'sort_to' => 'asc', 'limit' => 25));
+$estates_xml = $dezutes -> getEstates(array('estate_type' => 'houses', 'sort_by' => 'sale_price', 'sort_to' => 'asc', 'limit' => 25, 'for_sale' => 1));
 
+$xml_parser = new XML_Unserializer(array('parseAttributes' => true));
+$xml_parser -> unserialize($xml_parser);
+
+$estates = $xml_parser -> getUnserializedData();
 
 ?>
