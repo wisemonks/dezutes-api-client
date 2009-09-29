@@ -1,0 +1,20 @@
+Dezutes.lt - NT valdymo įrankis.
+Dezutes.lt API.
+Duomenu apsikeitimas vyksta REST principu. Siuo metu pilnai palaikomas tik GET metodas.
+Duomenis atiduodami XML ir JSON formatu. 
+Naudotojai identifikuojami Auth Basic principu. 
+Vartotojo vardas naudojamas Dezutes.lt imones subdomainas pvz. *wisemonks*.dezutes.lt.
+Slaptazodis - md5 raktas, sugeneruotas Dezutes.lt sistemos. 
+
+Instrukcijos kaip naudotis PHP API klientu:
+<?php
+require_once 'dezutes.client.php';
+
+$dezutes = new DezutesClient('ntagentura', '8727h3bggvv4hgv9jg3hgfg2mnb4');
+/*
+Paprasom atiduoti informacija apie 25 pigiausius namus
+*/
+$estates = $dezutes -> getEstates(array('estate_type' => 'houses', 'sort_by' => 'sale_price', 'sort_to' => 'asc', 'limit' => 25));
+
+
+?>
