@@ -1,10 +1,10 @@
 Dezutes.lt - NT valdymo įrankis.
 Dezutes.lt API.
-Duomenu apsikeitimas vyksta REST principu. Siuo metu pilnai palaikomas tik GET metodas.
+Duomenų apsikeitimas vyksta REST principu. Šiuo metu pilnai palaikomas tik GET metodas(ateityje planuojamas POST/PUT/DELETE metodu realizavimas).
 Duomenis atiduodami XML ir JSON formatu. 
 Naudotojai identifikuojami Auth Basic principu. 
-Vartotojo vardas naudojamas Dezutes.lt imones subdomainas pvz. *wisemonks*.dezutes.lt.
-Slaptazodis - md5 raktas, sugeneruotas Dezutes.lt sistemos. 
+Vartotojo vardas naudojamas Dezutes.lt įmonės subdomainas pvz. *wisemonks*.dezutes.lt.
+Slaptažodis - api_key raktas(md5 string), sugeneruotas Dezutes.lt sistemos. 
 
 Instrukcijos kaip naudotis PHP API klientu:
 <?php
@@ -12,15 +12,19 @@ require_once 'dezutes.client.php';
 #XML dokumento parsinimui rekomenduojame PEAR XML_Serializer biblioteka
 require_once 'XML/Unserializer.php';
 
-$dezutes = new DezutesClient('ntagentura', '8727h3bggvv4hgv9jg3hgfg2mnb4');
-/*
-Paprasom atiduoti informacija apie 25 pigiausius parduodamus namus
-*/
+#Pasijungimo duomenys
+$subdomain = 'ntagentura';
+$api_key = '8727h3bggvv4hgv9jg3hgfg2mnb4';
+
+$dezutes = new DezutesClient($subdomain, $api_key);
+
+#Gražiname informacija apie 25 pigiausius parduodamus namus
 $estates_xml = $dezutes -> getEstates(array('estate_type' => 'houses', 'sort_by' => 'sale_price', 'sort_to' => 'asc', 'limit' => 25, 'for_sale' => 1));
 
 $xml_parser = new XML_Unserializer(array('parseAttributes' => true));
 $xml_parser -> unserialize($xml_parser);
 
+#Gauname NT objektų sąrašiuką
 $estates = $xml_parser -> getUnserializedData();
 
 ?>

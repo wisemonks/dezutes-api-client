@@ -7,6 +7,7 @@ class DezutesClient extends DezutesAPI {
     parent::__construct($subdomain, $api_key);
   }
   /*
+   Metodas skirtas NT objektu sarasui gauti.
    Per masyva $params perduodam salygos parametrus Dezutems
    $params["estate_type"] = 'commercial'; 
     'commercial' - komercine patalpos
@@ -60,45 +61,72 @@ class DezutesClient extends DezutesAPI {
     return $this -> sendRequest('estates', $params);
   }
   
+  /*
+    Metodas grazina konkreciam NT objektui gauti
+  */
   public function getEstate($id = 0, $params = array()){
     return $this -> sendRequest("estates/".$id, $params);
   }
-  
+  /*
+    Metodas grazina konkretaus NT objekto nuotraukas
+  */
   public function getEstatePhotos($id = 0, $params = array()){
     return $this -> sendRequest("estates/".$id.'/photos', $params);
   }
   
+  /*
+    Metodas grazina objektu kiekiui gauti, pagal parametrus(ziur. i getEstates metoda)
+  */
   public function getEstatesCount($params = array()){
     return $this -> sendRequest("estates_count", $params);
   }
-  #Eksportuotu i svetaine NT savivaldybiu sarasiukas
+  /*
+  Metodas pagal parametrus grazina visas Savivaldybes. Grazinamos tik tos, kurios turi sarysi su NT objektais
+  $params - ziur. i getEstates
+  */
   public function getEstateMunicipalities($params = array()){
     return $this -> sendRequest("municipalities", $params);
   }
-  #Eksportuotu i svetaine NT miestu sarasiukas
+  /*
+   Metodas pagal parametrus grazina visus Miestus. Grazinamos tik tie, kurie turi sarysi su NT objektais
+   $params - ziur. i getEstates
+   */
   public function getEstateCities($params = array()){
     return $this -> sendRequest("cities", $params);
   }
-  #Eksportuotu i svetaine NT mikrorajonu sarasiukas
+  /*
+   Metodas pagal parametrus grazina visus MikroRajonus. Grazinamos tik tie, kurie turi sarysi su NT objektais
+   $params - ziur. i getEstates
+   */
   public function getEstateBlocks($params = array()){
     return $this -> sendRequest("blocks", $params);
   }
-  
+  /*
+   Metodas grazina projektus.
+   */
   public function getProjects($params = array()){
     return $this -> sendRequest("projects", $params);
   }
-  
+  /*
+   Metodas grazina konkretu projekta.
+   */
+  public function getProject($id = 0, $params = array()){
+    return $this -> sendRequest("projects/".$id, $params);
+  }
+  /*
+    Metodas grazina konkretaus projekto nuotraukas.
+  */
   public function getProjectPhotos($id = 0, $params = array()){
     return $this -> sendRequest("projects/".$id.'/photos', $params);
   }
-  
+  /*
+    Metodas grazina konkreciam projektui priskirtus NT objektus.
+  */
   public function getProjectEstates($id = 0, $params = array()){
     return $this -> sendRequest("projects/".$id.'/estates', $params);
   }
   
-  public function getProject($id = 0, $params = array()){
-    return $this -> sendRequest("projects/".$id, $params);
-  }
+  
 }
 
 ?>
