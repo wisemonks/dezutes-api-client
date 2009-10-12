@@ -101,6 +101,17 @@ class DezutesClient extends DezutesAPI {
   public function getEstateBlocks($params = array()){
     return $this -> sendRequest("blocks", $params);
   }
+  
+  # NT objektų statusai
+  public function getEstateStatuses(){
+    return $this -> sendRequest("estate_statuses");
+  }
+  
+  # NT objektų nuotraukų versijų sąrašas
+  public function getEstatePhotoVersions(){
+     return $this -> sendRequest("estate_photo_versions");
+   }
+
   /*
    Metodas grazina projektus.
    */

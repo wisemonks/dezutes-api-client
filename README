@@ -1,30 +1,39 @@
-Dezutes.lt - NT valdymo įrankis.
-Dezutes.lt API.
-Duomenų apsikeitimas vyksta REST principu. Šiuo metu pilnai palaikomas tik GET metodas(ateityje planuojamas POST/PUT/DELETE metodu realizavimas).
+== Dezutes.lt - NT valdymo įrankis.
+
+=== Dezutes.lt API
+
+Duomenų apsikeitimas vyksta REST principu. Šiuo metu pilnai palaikomas tik GET metodas.
 Duomenis atiduodami XML ir JSON formatu. 
 Naudotojai identifikuojami Auth Basic principu. 
 Vartotojo vardas naudojamas Dezutes.lt įmonės subdomainas pvz. *wisemonks*.dezutes.lt.
 Slaptažodis - api_key raktas(md5 string), sugeneruotas Dezutes.lt sistemos. 
 
-Instrukcijos kaip naudotis PHP API klientu:
-<?php
-require_once 'dezutes.client.php';
-#XML dokumento parsinimui rekomenduojame PEAR XML_Serializer biblioteka
-require_once 'XML/Unserializer.php';
+=== Instrukcijos kaip naudotis PHP API klientu:
+  <?php
+  require_once 'dezutes.client.php';
+  #XML dokumento parsinimui rekomenduojame PEAR XML_Serializer biblioteka
+  require_once 'XML/Unserializer.php';
 
-#Pasijungimo duomenys
-$subdomain = 'ntagentura';
-$api_key = '8727h3bggvv4hgv9jg3hgfg2mnb4';
+  #Pasijungimo duomenys
+  $subdomain = 'ntagentura';
+  $api_key = '8727h3bggvv4hgv9jg3hgfg2mnb4';
 
-$dezutes = new DezutesClient($subdomain, $api_key);
+  $dezutes = new DezutesClient($subdomain, $api_key);
 
-#Gražiname informacija apie 25 pigiausius parduodamus namus
-$estates_xml = $dezutes -> getEstates(array('estate_type' => 'houses', 'sort_by' => 'sale_price', 'sort_to' => 'asc', 'limit' => 25, 'for_sale' => 1));
+  #Gražiname informacija apie 25 pigiausius parduodamus namus
+  $estates_xml = $dezutes -> getEstates(array('estate_type' => 'houses', 'sort_by' => 'sale_price', 'sort_to' => 'asc',   'limit' => 25, 'for_sale' => 1));
 
-$xml_parser = new XML_Unserializer(array('parseAttributes' => true));
-$xml_parser -> unserialize($xml_parser);
+  $xml_parser = new XML_Unserializer(array('parseAttributes' => true));
+  $xml_parser -> unserialize($xml_parser);
 
-#Gauname NT objektų sąrašiuką
-$estates = $xml_parser -> getUnserializedData();
+  #Gauname NT objektų sąrašiuką
+  $estates = $xml_parser -> getUnserializedData();
 
-?>
+  ?>
+
+=== Daugiau informacijos 
+  http://api.dezutes.lt
+  
+  
+
+Visos teisės saugomos. WISE MONKS, UAB. 2009
