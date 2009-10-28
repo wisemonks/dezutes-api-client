@@ -107,7 +107,7 @@ class Dezutes
   # Gražinamas konkretus NT objektas, pagal ID
   #
   # ==== Spec.parametrai
-  # - photo_version | type:option, default=original | Nuotraukos versija. Visos nuotraukų versijos žiūr. į get_estate_photo_versions
+  # - photo_version | type:option, default=original | Nuotraukos versija. Grąžinama tik viena pagrindinė objekto nuotrauka. Visos nuotraukų versijos žiūr. į get_estate_photo_versions
   #
   # ==== Užklausos pvz:
   #     get_estate(76943, {:photo_version => 'site_thumb'})
@@ -179,18 +179,58 @@ class Dezutes
     send_request("/blocks", *args)
   end
   
+  # Projektų sąrašas
+  # Grąžinamą sąrašą galimę filtruoti pagal metodui perduodamus parametrus.
+  # 
+  # ==== Duomenų filtravimo parametrai:
+  # - municipality | type:integer | Savialdybė
+  # - city | type:integer | Miesto ID
+  # - is_investment | type:boolean(integer: 0 || 1) | Investiciniai projektai
+  # - is_living | type:boolean(integer: 0 || 1) | Gyvenamajieji projektai
+  # - is_commercial | type:boolean(integer: 0 || 1) | Komerciniai projektai
+  # 
+  #  Projektas gali buti ir investicinis, ir komercinis, ir gyvenamasis
+  #
+  # ==== Užklausos pvz:
+  #
+  #     #Visi Vilniaus miesto Investiciniai Komerciniai projektai
+  #     get_estate_blocks(:city => 1, :is_investment => 1, :is_commercial => 1)
+  #
   def get_projects(*args)
     send_request("/projects", *args)
   end
   
+  # Gražinamas konkretus NT projektas, pagal ID
+  #
+  # ==== Spec.parametrai
+  # - photo_version | type:option, default=original | Nuotraukos versija. Grąžinama tik viena pagrindinė projekto nuotrauka. Visos nuotraukų versijos žiūr. į get_estate_photo_versions
+  #
+  # ==== Užklausos pvz:
+  #     get_project(76943, {:photo_version => 'index'})
+  #
   def get_project(id, *args)
     send_request("/projects/#{id}", *args)
   end
   
+  # *Visos* konkretaus NT projekto nuotraukos
+  #
+  # ==== Spec.parametrai
+  # - photo_versions | type:array of options, default=[original] | Pageidaujamos nuotraukų versijos. Visos nuotraukų versijos žiūr. į get_project_photo_versions
+  #
+  # ==== Užklausos pvz:
+  #     get_estate_photos(16252, {:photo_versions => ['site_thumb', 'original']})
   def get_project_photos(id, *args)
     send_request("/projects/#{id}/photos", *args)
   end
   
+  # NT objektų sąrašas, kurie priskirti prie konkretaus projekto
+  #
+  # Rezultatą galime filtruoti pagal get_estates metodo parametrus
+  #
+  # ==== Užklausos pvz:
+  #     #NT projekto objektai, brangesni nei 1 milijonas
+  #     get_project_estates(234, {:sale_price_from => 1000000})
+  #
   def get_project_estates(id, *args)
     send_request("/projects/#{id}/estates", *args)
   end
@@ -203,6 +243,10 @@ class Dezutes
   # NT objektų nuotraukų versijų sąrašas
   def get_estate_photo_versions
     send_request("/estate_photo_versions")
+  end
+  # NT projektų nuotraukų versijų sąrašas
+  def get_project_photo_versions
+    send_request("/project_photo_versions")
   end
   
   protected

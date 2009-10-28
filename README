@@ -9,6 +9,7 @@ Vartotojo vardas naudojamas Dezutes.lt įmonės subdomainas pvz. *wisemonks*.dez
 Slaptažodis - api_key raktas(md5 string), sugeneruotas Dezutes.lt sistemos. 
 
 === Instrukcijos kaip naudotis PHP API klientu:
+
   <?php
   require_once 'dezutes.client.php';
   #XML dokumento parsinimui rekomenduojame PEAR XML_Serializer biblioteka
