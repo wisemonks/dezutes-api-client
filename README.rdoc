@@ -33,13 +33,16 @@
   ?>
 
 == Daugiau informacijos 
-<b>{Dokumentacija}</b>[http://api.dezutes.lt]
+{http://api.dezutes.lt}[http://api.dezutes.lt]
   
   
 == Gamintojo kontaktai
-<b>WISE MONKS, UAB</b><br>
-M.K.Paco g. 4, Vilnius<br>
-Mob.tel. +370 616 34780<br>
-El.p. info@wisemonks.com<br>
+<b>WISE MONKS, UAB</b>
+
+M.K.Paco g. 4, Vilnius
+
+Mob.tel. +370 616 34780
+
+El.p. info@wisemonks.com
 
 Visos teisės saugomos (c) 2009 {WISE MONKS - Verslo valdymo sistemos}[http://www.wisemonks.com/verslo-valdymo-sistemos.html]
