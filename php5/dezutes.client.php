@@ -138,7 +138,7 @@ class DezutesClient extends DezutesAPI {
   }
   
   # NT projektų nuotraukų versijų sąrašas
-   public function getEstatePhotoVersions(){
+   public function getProjectsPhotoVersions(){
       return $this -> sendRequest("project_photo_versions");
   }
   
