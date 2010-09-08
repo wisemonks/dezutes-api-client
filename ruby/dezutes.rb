@@ -119,6 +119,7 @@ class Dezutes
   #
   # ==== Spec.parametrai
   # - photo_versions | type:array of options, default=[original] | Pageidaujamos nuotraukų versijos. Visos nuotraukų versijos žiūr. į get_estate_photo_versions
+  # - limit | type:integer | Nuotraukų skaičius
   #
   # ==== Užklausos pvz:
   #     get_estate_photos(16252, {:photo_versions => ['site_thumb', 'original']})
@@ -247,6 +248,14 @@ class Dezutes
   # NT projektų nuotraukų versijų sąrašas
   def get_project_photo_versions
     send_request("/project_photo_versions")
+  end
+  #Brokerių sąrašas
+  def get_brokers
+    send_request("/brokers")
+  end
+  #Brokerio informacija
+  def get_broker(id)
+    send_request("/brokers/#{id}")
   end
   
   protected
