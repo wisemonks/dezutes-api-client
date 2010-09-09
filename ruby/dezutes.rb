@@ -42,6 +42,7 @@ class Dezutes
   # 
   # ==== Duomenų filtravimo parametrai:
   # - estate_type   |   type:option, values=commercial, house, flat, site |  NT tipas.
+  # - broker  | type:integer  | Brokerio ID
   # - municipality | type:integer | Savialdybė
   # - city | type:integer | Miesto ID
   # - block | type:integer | Mikrorajono ID
@@ -249,9 +250,21 @@ class Dezutes
   def get_project_photo_versions
     send_request("/project_photo_versions")
   end
-  #Brokerių sąrašas
-  def get_brokers
-    send_request("/brokers")
+  
+  # Brokerių sąrašas
+  #
+  # ==== Duomenų rūšiavimas, rūšiavimo kryptis:
+  # - sort_by | type: option, default=name | Rūšiuoti pagal:
+  #   - name - vardą
+  #   - phone - telefono numerį
+  #   - email - el.paštą
+  #
+  # - sort_to | type: option, default=asc | Rūšiavimo kryptis:
+  #   - asc 
+  #   - desc
+  #
+  def get_brokers(*args)
+    send_request("/brokers", *args)
   end
   #Brokerio informacija
   def get_broker(id)

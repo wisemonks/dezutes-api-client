@@ -141,6 +141,15 @@ class DezutesClient extends DezutesAPI {
    public function getProjectsPhotoVersions(){
       return $this -> sendRequest("project_photo_versions");
   }
+  #Brokerio informacija
+  public function getBroker($id = 0, $params = array()){
+     return $this -> sendRequest("brokers/".$id, $params);
+   }
+   
+  #Brokerių sąrašas
+  public function getBrokers($params = array()){
+    return $this -> sendRequest("brokers", $params);
+  }
   
 }
 
