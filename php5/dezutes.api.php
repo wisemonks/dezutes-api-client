@@ -48,6 +48,8 @@ class DezutesAPI {
   private function constructUrl($location = 'estates', $params_hash = array()){
     $url_params = array();
     
+    $params_hash['api_key'] =  $this -> api_key;
+    
     foreach($params_hash as $key => $value){
       #nepriimam tusciu parametru
       if(empty($value)) continue;
@@ -64,7 +66,7 @@ class DezutesAPI {
     
     $url = $this -> url .'/'. $this -> url_api_version .'/'. $location.'.'.$this -> data_format;
     
-    $url_params['api_key'] =  $this -> api_key;
+    
     
     if(sizeOf($url_params) > 0){
       $url .= '?'.implode('&', $url_params);
