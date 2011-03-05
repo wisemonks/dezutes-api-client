@@ -31,7 +31,7 @@ require 'httparty'
 class Dezutes
   include HTTParty
   
-  base_uri 'http://api.dezutes.lt/v1'
+  base_uri 'http://localhost:3000/v1'
   
   def initialize(subdomain, api_key)
     @auth = {:username => subdomain, :password => api_key}
@@ -92,6 +92,7 @@ class Dezutes
   # 
   # ==== Spec.parametrai
   # - extended_info | type:boolean, default=0 | Išplėstinė objektų informacija
+  # - description_lang | type:string | Aprašymo kalba (kai kurios agentūros saugo NT objektus keliomis kalbomis) pvz. description_lang=en
   # - photo_version | type:option, default=original | Nuotraukos versija. Visos nuotraukų versijos žiūr. į get_estate_photo_versions
   #
   # ==== Užklausos pvz:
@@ -276,7 +277,8 @@ class Dezutes
     response_type = args.first.is_a?(Symbol) ? args.shift : :xml
     options = (args.last.is_a?(Hash) ? args.pop : {}).merge!(
     {
-      :basic_auth => @auth
+      :basic_auth => @auth,
+      :api_key => @auth[:password]
     })
     self.class.get(resource_location.concat(".#{response_type}"), options)
   end

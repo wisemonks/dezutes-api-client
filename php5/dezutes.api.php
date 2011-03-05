@@ -8,14 +8,16 @@ class DezutesAPI {
   private $version = '0.1';
   private $allowed_data_formats = array('xml', 'json');
   public $data_format = 'xml';
+  private $api_key;
   
   #$subdomain ir $api_key naudojami autentifikacijai
   function __construct($subdomain, $api_key) {
+    $this -> api_key = $api_key;
     $this -> curl = curl_init();
     #nurodom autentifikacijos buda
     curl_setopt($this -> curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
     #autentifikacijos duomenys
-    curl_setopt($this -> curl, CURLOPT_USERPWD, $subdomain . ":" . $api_key);
+    curl_setopt($this -> curl, CURLOPT_USERPWD, $subdomain . ":" . $this -> api_key);
     #paprasom, kad su rezultatu grazintu ir headerius. Testavimo sumetimais.
     curl_setopt($this -> curl, CURLOPT_HEADER, false);
     #su uzklausa siunciam ir siokius tokius duomenis apie save. Bendrinei statistikai
@@ -62,10 +64,11 @@ class DezutesAPI {
     
     $url = $this -> url .'/'. $this -> url_api_version .'/'. $location.'.'.$this -> data_format;
     
+    $url_params['api_key'] =  $this -> api_key;
+    
     if(sizeOf($url_params) > 0){
       $url .= '?'.implode('&', $url_params);
     }
-
     return $url;
   }
   
