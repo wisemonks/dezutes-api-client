@@ -31,7 +31,7 @@ require 'httparty'
 class Dezutes
   include HTTParty
   
-  base_uri 'http://localhost:3000/v1'
+  base_uri 'http://api.dezutes.lt/v1'
   
   def initialize(subdomain, api_key)
     @auth = {:username => subdomain, :password => api_key}
