@@ -1,0 +1,85 @@
+#estate_type(commercial - kom.patalpos, house - namai, flat - butai, site - sklypai);
+
+#Butu specifiniai atributai(flat_attributes):
+building_type: [[Blokinis, brick_wall], [Monolitas, monolithic], [Mūrinis, stone], [Medinis, wood], [Karkasinis, framehouse]]
+building_equipment: [[Visa apdaila, full], [Dalinė apdaila, part], [Suremontuotas, partial_repairs], [Tvarkingas, good], [Remontuotinas, need_repairs], [Kita, other]]
+building_heating: [[Centrinis, central], [Centrinis-kolektorinis, city], [Dujinis, gas], [Kietu kuru, solid_fuel], [Elektrinis, electric]]
+
+#Namu specifiniai atributai(house_attributes):
+building_type: [[Namas, house], [Sublokuotas, house_part], [Kotedžas, cottage], [Sodyba/Vasarnamis, summerhouse], [Kita, other]]
+building_material: [[Blokinis, brick_wall], [Mūrinis, stone], [Medinis, wood], [Monolitas, monolithic], [Karkasinis, framehouse]]
+building_equipment: [[Pilnai įrengtas, full], [Dalinė apdaila, part], [Neįrengtas/Statomas, roofed_box], [Kita, other]]
+building_heating: [[Centrinis, central], [Dujinis, gas], [Elektrinis, electric], [Kietu kuru, solid_fuel], [Skystu kuru, liquid_fuel], [Geoterminis, geo], [Kita, other]]
+
+#Kom.patalpu specifiniai atributai(commercial_attributes):
+#Paskirtys(purposes):
+purpose_office: Administracinės
+purpose_manufacture: Gamybinės
+purpose_store: Sandėliavimo
+purpose_buisness: Prekybos
+purpose_food: Maitinimo
+purpose_building: Pastatas
+purpose_other: Kitos paskirties
+
+building_type: [[Blokinis, brick_wall], [Mūrinis, stone], [Medinis, wood], [Monolitas, monolithic], [Metalinis, hangar]
+building_equipment: [[Įrengtas, full], [Dalinė apdaila, part], [Neįrengtas, no_equipment]]
+building_heating: [[Nėra, 'null'], [Centrinis, central], [Centrinis-kolektorinis, city], [Dujinis, gas], [Kietu kuru, solid_fuel], [Elektrinis, electric], [Skystu kuru, liquid_fuel], [Geoterminis, geo], [Kita, other]]
+
+
+#Zem.sklypu atributai(site_attributes):
+purpose: [[Komercinė, commercial], [Žemės ūkio, agriculture], [Miškų ūkio, forest], [Daugiaaukštė gyvenamoji, residential_skyscraper], [Namų valda, residential], [Pramonės/sandėliavimo/prekybos, manufacturing], [Rekreacinės, recreation], [Sodų, garden]]
+
+
+#Bendriniai visiems tipams(features):
+  has_tv: Televizorius
+  has_balcony: Balkonas
+  has_terrace: Terasa
+  has_alarm: Signalizacija
+  has_keylocked_stairway: Kodinė laiptinės spyna
+  has_armed_doors: Šarvuotos durys
+  has_fireside: Židinys
+  has_kitchen: Buitinė technika
+  has_with_second_floor: Butas per kelis aukštus
+  has_lumber_room: Sandėliukas
+  has_basement: Rūsys
+  has_conditioning: Kondicionierius
+  has_parking_place: Vieta automobiliui
+  has_bath: Vonia
+  has_wc_bath_separate: Tualetas ir vonia atskirai
+  has_detail_plan: Detalus planas
+  has_cable_tv: Kabelinė televizija
+  has_internet: Internetas
+  has_phone: Telefono linija
+  has_refridgerator: Šaldytuvas
+  has_wahing_machine: Skalbimo mašina
+  has_lift: Liftas
+  has_packet_windows: Langai su stiklo paketais
+  has_parquet: Parketas
+  has_open_kitchen: Virtuvė sujungta su kamb.
+  has_armed_doors: Šarvuotos durys
+  has_high_ceiling: Aukštos lubos
+  has_dressing_room: Rūbinė
+  has_furniture: Su baldais
+  has_water_pool: Baseinas
+  has_bathhouse: Pirtis
+  has_near_water: Šalia vandens tvenkinio   
+  has_good_access: Geras privažiavimas
+  has_electricity: Elektra
+  has_local_plumbing: Vietinė kanalizacija
+  has_city_plumbing: Miesto kanalizacija
+  has_gas: Dujos
+  has_water: Vandentiekis
+  has_electricity_380V: Elektra 3x380V
+  has_boiler: Boileris
+  has_wavin_pipes: Wavin vamzdžiai
+  has_shower: Dušas
+  has_outdoor_terrace: Lauko terasa
+  has_street_entrance: Įėjimas iš gatvės
+  has_cargo_elevator: Krovininis liftas
+  has_local_feeding: Maitinimo įstaiga pastate
+  has_room_conditioning: Patalpų kondicionavimas
+  has_separate_entryway: Atskiras įėjimas
+  has_conference_hall: Konferencijų salė pastate
+  has_security: Apsauga
+  has_plumbing: Kanalizacija
+  has_asphalt_entrance: Patogus privažiavimas
