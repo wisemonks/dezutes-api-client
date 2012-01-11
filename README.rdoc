@@ -34,15 +34,14 @@
 
 == Daugiau informacijos 
 {http://api.dezutes.lt}[http://api.dezutes.lt]
-  
+
+== Kalbinės reikšmės
+{https://github.com/wisemonks/dezutes-api-client/blob/master/php5/lt.php}[https://github.com/wisemonks/dezutes-api-client/blob/master/php5/lt.php]
   
 == Gamintojo kontaktai
 <b>WISE MONKS, UAB</b>
-
-M.K.Paco g. 4, Vilnius
-
+Mildos g. 4, Vilnius
 Mob.tel. +370 616 34780
-
 El.p. info@wisemonks.com
 
-Visos teisės saugomos (c) 2009 {WISE MONKS - Verslo valdymo sistemos}[http://www.wisemonks.com/verslo-valdymo-sistemos.html]
+Visos teisės saugomos (c) 2008-2012 {WISE MONKS - Verslo valdymo sistemos}[http://www.wisemonks.com/verslo-valdymo-sistemos.html]

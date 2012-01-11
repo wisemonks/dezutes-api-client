@@ -41,22 +41,22 @@ class Dezutes
   # Grąžinamą sąrašą galimę filtruoti pagal metodui perduodamus parametrus.
   # 
   # ==== Duomenų filtravimo parametrai:
-  # - estate_type   |   type:option, values=commercial, house, flat, site |  NT tipas.
+  # - estate_type   |   type:option, values=commercial, house, flat, site |  NT tipas. Galima nurodyti kelis tipus, pvz. estate_type=commercial,site
   # - broker  | type:integer  | Brokerio ID
   # - municipality | type:integer | Savialdybė
   # - city | type:integer | Miesto ID
   # - block | type:integer | Mikrorajono ID
-  # - street | type:integer | Gatvės ID
+  # - street | type:varchar | Gatvės paieška pagal pavadinimą ar pavadinimo dalį
   # - project | type:integer | Projekto ID
+  # - belongs_to_project | type: boolean | Tik tie kurie yra priskirti projektui. Naudojamas, tais atvejais kai norima gauti visus Projektams priklausančius objektus
   # - area_from | type:float | Plotas nuo
   # - area_till | type:float | Plotas iki
-  # - for_sale | type:boolean | Ar NT parduodamas?
-  # - for_rent | type:boolean | Ar NT nuomojamas?
+  # - for_sale | type:boolean | Ar NT parduodamas? | for_sale=1
+  # - for_rent | type:boolean | Ar NT nuomojamas? | for_rent=1
+  # - operation | type:option values = for_sale, for_rent | Alternatyvus nurodymas gauti parduodamus ar nuomojamus objektus | operation=for_sale
   # - status | type:integer | Objekto statusas Dežutėse. Objektų sąrašo gavimas žiūr. į metodą get_estate_statuses
-  # - price_from | type:float | Kaina nuo(imtinai). Norint naudoti šį parametrą, būtina nurodyti ar objektas yra parduodamas(for_sale=1) ar nuomojamas(for_rent=1) 
-  # - price_till | type:float | Kaina iki(imtinai). Norint naudoti šį parametrą, būtina nurodyti ar objektas yra parduodamas(for_sale=1) ar nuomojamas(for_rent=1) 
-  # - sale_price_from | type:float | Kaina nuo(imtinai)
-  # - sale_price_tille | type:float | Kaina iki(imtinai)
+  # - price_from | type:float | Kaina nuo(imtinai) | price_from=400000
+  # - price_till | type:float | Kaina iki(imtinai)
   # - rooms | type:float | Tikslus kamb.sk. Pvz. rooms=3 - rasti NT objektus su 3 kambariais/patalpomis.
   # - room_count_from | type:integer | Kambarių skaičius nuo(imtinai).
   # - room_count_till | type:integer | Kambarių skaičius iki(imtinai).
@@ -66,6 +66,9 @@ class Dezutes
   # - floor_till | type:integer | Buto ar patalpų aukštas iki(imtinai).
   # - year_from | type:integer | Pastato statybos metai nuo(imtinai).
   # - year_till | type:integer | Pastato statybos metai iki(imtinai).
+  # - purpose | type:varchar | Komercinio objekto arba sklypo paskirtis
+  # - purposes | type:array| Komercinio objekto paskirtys pvz. Rasti sandėliavimo IR gamybinės patalpas - purposes=purpose_store,purpose_manufacture 
+  # - purposes_join | type: option, values = or, and. Komercinio objektų pagal paskirtis užklausos formavimo nustatymas. Pvz. Užklausa 'purposes=purpose_store,purpose_manufacture&purposes_join=or' grąžins sandėliavimo ARBA gamybinės patalpas
   #
   # ==== Duomenų ribojimo, puslapiavimo parametrai:
   # - per_page | type:integer, max=100 | Grąžinamų NT objektų kiekis. 
