@@ -274,6 +274,11 @@ class Dezutes
   def get_broker(id)
     send_request("/brokers/#{id}")
   end
+
+  #Ofisų sąrašas
+  def get_broker(*args)
+    send_request("/offices", *args)
+  end
   
   protected
   def send_request(resource_location, *args)

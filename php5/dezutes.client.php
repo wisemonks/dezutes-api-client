@@ -150,6 +150,12 @@ class DezutesClient extends DezutesAPI {
   public function getBrokers($params = array()){
     return $this -> sendRequest("brokers", $params);
   }
+
+  #Ofisų sąrašas
+  public function getOffices($params = array()){
+    return $this -> sendRequest("offices", $params);
+  }
+  
   
 }
 
