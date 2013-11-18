@@ -3,10 +3,10 @@
 == Dezutes.lt API
 
 * Duomenų apsikeitimas vyksta REST principu. Šiuo metu pilnai palaikomas tik GET metodas.
-* Duomenis atiduodami XML ir JSON formatu. 
-* Naudotojai identifikuojami Auth Basic principu. 
+* Duomenis atiduodami XML ir JSON formatu.
+* Naudotojai identifikuojami Auth Basic principu.
 * Vartotojo vardas naudojamas Dezutes.lt įmonės subdomainas pvz. *wisemonks*.dezutes.lt.
-* Slaptažodis - api_key raktas(md5 string), sugeneruotas Dezutes.lt sistemos. 
+* Slaptažodis - api_key raktas(md5 string), sugeneruotas Dezutes.lt sistemos.
 
 == Instrukcijos kaip naudotis PHP API klientu:
 
@@ -32,12 +32,12 @@
 
   ?>
 
-== Daugiau informacijos 
+== Daugiau informacijos
 {http://api.dezutes.lt}[http://api.dezutes.lt]
 
 == Kalbinės reikšmės
 {https://github.com/wisemonks/dezutes-api-client/blob/master/php5/lt.php}[https://github.com/wisemonks/dezutes-api-client/blob/master/php5/lt.php]
-  
+
 == Gamintojo kontaktai
 <b>WISE MONKS, UAB</b>
 Mildos g. 4, Vilnius
@@ -46,4 +46,4 @@ Mob.tel. +370 616 34780
 
 El.p. info@wisemonks.com
 
-Visos teisės saugomos (c) 2008-2012 {WISE MONKS - Verslo valdymo sistemos}[http://www.wisemonks.com/verslo-valdymo-sistemos.html]
+Visos teisės saugomos (c) 2008-2013 {WISE MONKS - Verslo valdymo sistemos}[http://www.wisemonks.com/verslo-valdymo-sistemos.html]

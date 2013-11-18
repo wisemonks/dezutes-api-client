@@ -2,14 +2,14 @@
 #
 # Dežutės.lt - NT valdymo įrankis.
 # Šio dokumento esmė paaiškinti kokiais būdais vyksta apsikeitimai tarp Dežutės.lt sistemos ir kliento(nt agentūros) svetainės.
-# 
+#
 # = Duomenų apsikeitimas
 #
 # Duomenų apsikeitimas vyksta REST principu. Šiuo metu pilnai palaikomas tik GET metodas(ateityje planuojamas POST/PUT/DELETE metodu realizavimas).
-# Duomenis atiduodami XML ir JSON formatu. 
-# Naudotojai identifikuojami Auth Basic principu. 
+# Duomenis atiduodami XML ir JSON formatu.
+# Naudotojai identifikuojami Auth Basic principu.
 # Vartotojo vardas naudojamas Dezutes.lt įmonės subdomainas pvz. *wisemonks*.dezutes.lt.
-# Slaptažodis - api_key raktas(md5 string), sugeneruotas Dezutes.lt sistemos. 
+# Slaptažodis - api_key raktas(md5 string), sugeneruotas Dezutes.lt sistemos.
 
 
 require 'rubygems'
@@ -19,27 +19,27 @@ require 'httparty'
 #
 # Dežutės.lt - NT valdymo įrankis.
 # Šio dokumento esmė paaiškinti kokiais būdais vyksta apsikeitimai tarp Dežutės.lt sistemos ir kliento(nt agentūros) svetainės.
-# 
+#
 # = Duomenų apsikeitimas
 #
 # Duomenų apsikeitimas vyksta REST principu. Šiuo metu pilnai palaikomas tik GET metodas(ateityje planuojamas POST/PUT/DELETE metodu realizavimas).
-# Duomenis atiduodami XML ir JSON formatu. 
-# Naudotojai identifikuojami Auth Basic principu. 
+# Duomenis atiduodami XML ir JSON formatu.
+# Naudotojai identifikuojami Auth Basic principu.
 # Vartotojo vardas naudojamas Dezutes.lt įmonės subdomainas pvz. *wisemonks*.dezutes.lt.
 # Slaptažodis - api_key raktas(md5 string), sugeneruotas Dezutes.lt sistemos.
 
 class Dezutes
   include HTTParty
-  
+
   base_uri 'http://api.dezutes.lt/v1'
-  
+
   def initialize(subdomain, api_key)
     @auth = {:username => subdomain, :password => api_key}
   end
-  
+
   # Metodas skirtas NT objektu sarasui gauti.
   # Grąžinamą sąrašą galimę filtruoti pagal metodui perduodamus parametrus.
-  # 
+  #
   # ==== Duomenų filtravimo parametrai:
   # - estate_type   |   type:option, values=commercial, house, flat, site |  NT tipas. Galima nurodyti kelis tipus, pvz. estate_type=commercial,site
   # - broker  | type:integer  | Brokerio ID
@@ -55,8 +55,11 @@ class Dezutes
   # - for_rent | type:boolean | Ar NT nuomojamas? | for_rent=1
   # - operation | type:option values = for_sale, for_rent | Alternatyvus nurodymas gauti parduodamus ar nuomojamus objektus | operation=for_sale
   # - status | type:integer | Objekto statusas Dežutėse. Objektų sąrašo gavimas žiūr. į metodą get_estate_statuses
+  # - statuses | type:array | Pagal kelis objektų statusus | statuses
   # - price_from | type:float | Kaina nuo(imtinai) | price_from=400000
   # - price_till | type:float | Kaina iki(imtinai)
+  # - square_price_from | type:float | Kv. m kaina nuo(imtinai) | square_price_from=400000
+  # - square_price_till | type:float | Kv. m kaina iki(imtinai)
   # - rooms | type:float | Tikslus kamb.sk. Pvz. rooms=3 - rasti NT objektus su 3 kambariais/patalpomis.
   # - room_count_from | type:integer | Kambarių skaičius nuo(imtinai).
   # - room_count_till | type:integer | Kambarių skaičius iki(imtinai).
@@ -67,13 +70,20 @@ class Dezutes
   # - year_from | type:integer | Pastato statybos metai nuo(imtinai).
   # - year_till | type:integer | Pastato statybos metai iki(imtinai).
   # - purpose | type:varchar | Komercinio objekto arba sklypo paskirtis
-  # - purposes | type:array| Komercinio objekto paskirtys pvz. Rasti sandėliavimo IR gamybinės patalpas - purposes=purpose_store,purpose_manufacture 
+  # - purposes | type:array| Komercinio objekto paskirtys pvz. Rasti sandėliavimo IR gamybinės patalpas - purposes=purpose_store,purpose_manufacture
   # - purposes_join | type: option, values = or, and. Komercinio objektų pagal paskirtis užklausos formavimo nustatymas. Pvz. Užklausa 'purposes=purpose_store,purpose_manufacture&purposes_join=or' grąžins sandėliavimo ARBA gamybinės patalpas
+  # - house_building_type | type:string | Pagal namo tipą.
+  # - new_estate | type:boolean | Tinklapio nustatymai "Naujas objektas" | new_estate=1
+  # - top_estate | type:boolean | Tinklapio nustatymai "Top objektas" | top_estate=1
+  # - projects | type:array | Objektų filtravimas pagal priskirtus projektus | projects=25,27
+  # - belongs_to_project | type:boolean | Objektai priklausantis projektams, nenurodant projektų id | belongs_to_project=1
+  # - no_project | type:boolean | Objektai nepriklausantis projektams | no_project=1
+  #
   #
   # ==== Duomenų ribojimo, puslapiavimo parametrai:
-  # - per_page | type:integer, max=100 | Grąžinamų NT objektų kiekis. 
+  # - per_page | type:integer, max=100 | Grąžinamų NT objektų kiekis.
   # - page | type:integer | Puslapio nr. SQL offset t.y.  sql išraiška 'LIMIT 10 OFFSET 10' yra lygi parametrams 'page = 2, per_page = 10'
-  # 
+  #
   # ==== Duomenų rūšiavimas, rūšiavimo kryptis:
   # - sort_by | type: option, default=date | Rūšiuoti pagal:
   #   - location - vietą
@@ -84,15 +94,16 @@ class Dezutes
   #   - square_sale_price - kv.m. pardavimo kainą
   #   - square_rent_price - k.m. nuomos kainą
   #   - date - sukūrimo datą
+  #   - edit_time - redagavimo datą
   #   - floor - aukštą
   #   - floor_count - aukštų skaičių
   #   - site_area - sklypo plotą. Tinka tik kai estate_type=house
   #   - rand - atsitiktine tvarka
-  # 
+  #
   # - sort_to | type: option, default=desc | Rūšiavimo kryptis:
-  #   - asc 
+  #   - asc
   #   - desc
-  # 
+  #
   # ==== Spec.parametrai
   # - extended_info | type:boolean, default=0 | Išplėstinė objektų informacija
   # - description_lang | type:string | Aprašymo kalba (kai kurios agentūros saugo NT objektus keliomis kalbomis) pvz. description_lang=en
@@ -108,7 +119,7 @@ class Dezutes
   def get_estates(*args)
     send_request("/estates", *args)
   end
-  
+
   # Gražinamas konkretus NT objektas, pagal ID
   #
   # ==== Spec.parametrai
@@ -119,7 +130,7 @@ class Dezutes
   def get_estate(id, *args)
     send_request("/estate/#{id}", *args)
   end
-  
+
   # *Visos* konkretaus NT objekto nuotraukos
   #
   # ==== Spec.parametrai
@@ -131,7 +142,7 @@ class Dezutes
   def get_estate_photos(id, *args)
     send_request("/estates/#{id}/photos", *args);
   end
-  
+
   # Metodas skirtas NT objektų kiekiui grąžinti
   #
   # Kiekis grąžinamas pagal 'Duomenų filtravimo parametrus' nurodytus metode get_estates
@@ -142,11 +153,11 @@ class Dezutes
   def get_estate_count(*args)
     send_request("/estates_count", *args)
   end
-  
+
   # Savivaldybių sąrašas
   #
   # Grąžinamas tik realus savivaldybių sąrašas t.y. tik tos savialdybės, kurios turi sąryšius su NT objektais
-  # 
+  #
   # Rezultatą galime filtruoti pagal get_estates metodo parametrus
   #
   # ==== Užklausos pvz:
@@ -156,11 +167,11 @@ class Dezutes
   def get_estate_municipalities(*args)
     send_request("/municipalities", *args)
   end
-  
+
   # Miestų/gyvenviečių sąrašas
   #
   # Grąžinamas tik realus miestų sąrašas t.y. tik tie miestai, kurios turi sąryšius su NT objektais
-  # 
+  #
   # Rezultatą galime filtruoti pagal get_estates metodo parametrus
   #
   # ==== Užklausos pvz:
@@ -170,11 +181,11 @@ class Dezutes
   def get_estate_cities(*args)
     send_request("/cities", *args)
   end
-  
+
   # Mikrorajonų sąrašas
   #
   # Grąžinamas tik realus mikrorajonų sąrašas t.y. tik tie mikrorajonai, kurios turi sąryšius su NT objektais
-  # 
+  #
   # Rezultatą galime filtruoti pagal get_estates metodo parametrus
   #
   # ==== Užklausos pvz:
@@ -184,17 +195,17 @@ class Dezutes
   def get_estate_blocks(*args)
     send_request("/blocks", *args)
   end
-  
+
   # Projektų sąrašas
   # Grąžinamą sąrašą galimę filtruoti pagal metodui perduodamus parametrus.
-  # 
+  #
   # ==== Duomenų filtravimo parametrai:
   # - municipality | type:integer | Savialdybė
   # - city | type:integer | Miesto ID
   # - is_investment | type:boolean(integer: 0 || 1) | Investiciniai projektai
   # - is_living | type:boolean(integer: 0 || 1) | Gyvenamajieji projektai
   # - is_commercial | type:boolean(integer: 0 || 1) | Komerciniai projektai
-  # 
+  #
   #  Projektas gali buti ir investicinis, ir komercinis, ir gyvenamasis
   #
   # ==== Užklausos pvz:
@@ -205,7 +216,7 @@ class Dezutes
   def get_projects(*args)
     send_request("/projects", *args)
   end
-  
+
   # Gražinamas konkretus NT projektas, pagal ID
   #
   # ==== Spec.parametrai
@@ -217,7 +228,7 @@ class Dezutes
   def get_project(id, *args)
     send_request("/projects/#{id}", *args)
   end
-  
+
   # *Visos* konkretaus NT projekto nuotraukos
   #
   # ==== Spec.parametrai
@@ -228,7 +239,7 @@ class Dezutes
   def get_project_photos(id, *args)
     send_request("/projects/#{id}/photos", *args)
   end
-  
+
   # NT objektų sąrašas, kurie priskirti prie konkretaus projekto
   #
   # Rezultatą galime filtruoti pagal get_estates metodo parametrus
@@ -240,12 +251,12 @@ class Dezutes
   def get_project_estates(id, *args)
     send_request("/projects/#{id}/estates", *args)
   end
-  
+
   # NT objektų statusų sąrašas
   def get_estate_statuses
     send_request("/estate_statuses")
   end
-  
+
   # NT objektų nuotraukų versijų sąrašas
   def get_estate_photo_versions
     send_request("/estate_photo_versions")
@@ -254,7 +265,7 @@ class Dezutes
   def get_project_photo_versions
     send_request("/project_photo_versions")
   end
-  
+
   # Brokerių sąrašas
   #
   # ==== Duomenų rūšiavimas, rūšiavimo kryptis:
@@ -264,22 +275,23 @@ class Dezutes
   #   - email - el.paštą
   #
   # - sort_to | type: option, default=asc | Rūšiavimo kryptis:
-  #   - asc 
+  #   - asc
   #   - desc
   #
   def get_brokers(*args)
     send_request("/brokers", *args)
   end
+
   #Brokerio informacija
   def get_broker(id)
     send_request("/brokers/#{id}")
   end
 
   #Ofisų sąrašas
-  def get_broker(*args)
+  def get_offices(*args)
     send_request("/offices", *args)
   end
-  
+
   protected
   def send_request(resource_location, *args)
     response_type = args.first.is_a?(Symbol) ? args.shift : :xml
@@ -290,5 +302,5 @@ class Dezutes
     })
     self.class.get(resource_location.concat(".#{response_type}"), options)
   end
-  
+
 end
