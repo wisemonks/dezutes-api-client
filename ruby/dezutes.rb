@@ -81,7 +81,7 @@ class Dezutes
   #
   #
   # ==== Duomenų ribojimo, puslapiavimo parametrai:
-  # - per_page | type:integer, max=100 | Grąžinamų NT objektų kiekis.
+  # - per_page | type:integer, max=250 | Grąžinamų NT objektų kiekis.
   # - page | type:integer | Puslapio nr. SQL offset t.y.  sql išraiška 'LIMIT 10 OFFSET 10' yra lygi parametrams 'page = 2, per_page = 10'
   #
   # ==== Duomenų rūšiavimas, rūšiavimo kryptis:
@@ -148,8 +148,8 @@ class Dezutes
   # Kiekis grąžinamas pagal 'Duomenų filtravimo parametrus' nurodytus metode get_estates
   #
   # ==== Užklausos pvz:
-  #     #Parduodamų, brangesnių nei milijonas litų, sklypų kiekis
-  #     get_estate_photos(:estate_type => 'site', :for_sale => 1, :sale_price_from => 1000000)
+  #     #Bendras butu ir namu kiekis
+  #     get_estate_count(:estate_type => 'flat,house')
   def get_estate_count(*args)
     send_request("/estates_count", *args)
   end
@@ -266,6 +266,16 @@ class Dezutes
     send_request("/project_photo_versions")
   end
 
+  # Metodas skirtas NT projektų kiekiui grąžinti
+  #
+  # Kiekis grąžinamas pagal 'Duomenų filtravimo parametrus' nurodytus metode get_projects
+  #
+  # ==== Užklausos pvz:
+  #     #Bendras NT projektu kiekis
+  #     get_project_count
+  def get_project_count(*args)
+    send_request("/projects_count", *args)
+  end
   # Brokerių sąrašas
   #
   # ==== Duomenų rūšiavimas, rūšiavimo kryptis:

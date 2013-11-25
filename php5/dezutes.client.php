@@ -2,14 +2,14 @@
 require_once 'dezutes.api.php';
 
 class DezutesClient extends DezutesAPI {
-  
+
   function __construct($subdomain, $api_key) {
     parent::__construct($subdomain, $api_key);
   }
   /*
    Metodas skirtas NT objektu sarasui gauti.
    Per masyva $params perduodam salygos parametrus Dezutems
-   $params["estate_type"] = 'commercial'; 
+   $params["estate_type"] = 'commercial';
     'commercial' - komercine patalpos
     'house' - namai;
     'flat' - butai;
@@ -18,7 +18,7 @@ class DezutesClient extends DezutesAPI {
    $params["city"] = 1; Integer; Miesto ID;
    $params["block"] = 34; Integer; Mikrorajono ID;
    $params["street"] = 2342; Integer; Gatves ID;
-   $params["project"] = 12; Integer; Projekto ID; Ziur. i 
+   $params["project"] = 12; Integer; Projekto ID; Ziur. i
    $params["area_from"] = 23.45; Float; Plotas nuo;
    $params["area_from"] = 43; Float; Plotas iki;
    $params["for_sale"] = 1; Bool/Integer; Operacijos tipas. Pardavimas;
@@ -27,16 +27,16 @@ class DezutesClient extends DezutesAPI {
    $params["rooms"] = 2; Integer; Kambariu skaicius;
    $params["room_count_from"] = 1; Integer; Kambariu skaiciuos nuo;
    $params["room_count_from"] = 2; Integer; Kambariu skaiciuos iki;
-   
+
    $params["floor_count_from"] = 1; Integer; Pastato aukstu skaicius nuo;
    $params["floor_count_till"] = 2; Integer; Pastato aukstu skaicius iki;
-   
+
    $params["floor_from"] = 2; Integer; Patalpos/buto aukstas nuo;
    $params["floor_till"] = 3; Integer; Patalpos/buto aukstas iki;
-   
+
    $params["year_from"] = 1999; Integer; Pastatato statybos metai nuo;
    $params["year_till"] = 2004; Integer; Pastatato statybos metai iki;
-   
+
    $purpose['purpose'] = array('purpose_office') || '';
    Komerciniu patalpu atveju Array tipas;
     purpose_office: Administracinės
@@ -46,7 +46,7 @@ class DezutesClient extends DezutesAPI {
     purpose_food: Maitinimo
     purpose_building: Pastatas
     purpose_other: Kitos paskirties
-    
+
    Sklypu atveju String tipas:
     commercial: Komercinė
     agriculture: Žemės ūkio
@@ -60,7 +60,7 @@ class DezutesClient extends DezutesAPI {
   public function getEstates($params = array()){
     return $this -> sendRequest('estates', $params);
   }
-  
+
   /*
     Metodas grazina konkreciam NT objektui gauti
   */
@@ -73,7 +73,7 @@ class DezutesClient extends DezutesAPI {
   public function getEstatePhotos($id = 0, $params = array()){
     return $this -> sendRequest("estates/".$id.'/photos', $params);
   }
-  
+
   /*
     Metodas grazina objektu kiekiui gauti, pagal parametrus(ziur. i getEstates metoda)
   */
@@ -101,12 +101,12 @@ class DezutesClient extends DezutesAPI {
   public function getEstateBlocks($params = array()){
     return $this -> sendRequest("blocks", $params);
   }
-  
+
   # NT objektų statusai
   public function getEstateStatuses(){
     return $this -> sendRequest("estate_statuses");
   }
-  
+
   # NT objektų nuotraukų versijų sąrašas
   public function getEstatePhotoVersions(){
      return $this -> sendRequest("estate_photo_versions");
@@ -136,16 +136,22 @@ class DezutesClient extends DezutesAPI {
   public function getProjectEstates($id = 0, $params = array()){
     return $this -> sendRequest("projects/".$id.'/estates', $params);
   }
-  
+
   # NT projektų nuotraukų versijų sąrašas
    public function getProjectsPhotoVersions(){
       return $this -> sendRequest("project_photo_versions");
+  }
+  /*
+    Metodas grazina projektu kieki, pagal parametrus(ziur. i getProjects metoda)
+  */
+  public function getProjectCount($params = array()){
+    return $this -> sendRequest("projects_count", $params);
   }
   #Brokerio informacija
   public function getBroker($id = 0, $params = array()){
      return $this -> sendRequest("brokers/".$id, $params);
    }
-   
+
   #Brokerių sąrašas
   public function getBrokers($params = array()){
     return $this -> sendRequest("brokers", $params);
@@ -155,8 +161,8 @@ class DezutesClient extends DezutesAPI {
   public function getOffices($params = array()){
     return $this -> sendRequest("offices", $params);
   }
-  
-  
+
+
 }
 
 ?>
