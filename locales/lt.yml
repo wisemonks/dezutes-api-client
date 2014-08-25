@@ -1,0 +1,230 @@
+favorite_objects: Įsimintini skelbimai
+commercials: Komercinis turtas
+residentials: Gyvenamasis turtas
+land_plots: Žemės sklypai
+commercials_projects: Komerciniai
+residentials_projects: Gyvenamieji
+land_plots_projects: Žemės sklypai
+website_currency: Lt
+price_from: Kainos nuo
+projects_url: projektai
+list_page_title_for_commercial: Komercinis turtas
+list_page_title_for_flat: Gyvenamasis turtas
+list_page_title_for_house: Gyvenamasis turtas
+list_page_title_for_site: Žemės sklypai
+forget_all: pamiršti visus skelbimus
+footer_contacts: 'UAB "Litectus"<br>Balčikonio g. 3, Vilnius<br>Tel.: +370 5 268 1432<br><a href="mailto:litectus@seb.lt">litectus@seb.lt</a>'
+sales_manager: Pardavimų vadovas
+commercials_url: 'komercines-patalpos'
+residentials_url: 'gyvenamosios-patalpos'
+land_plots_url: 'zemes-sklypai'
+about_us_url: 'apie-mus'
+contacts_url: 'kontaktai'
+search_url: 'detali-paieska'
+projects_url: 'projektai'
+about_us: Apie mus
+contacts: Kontaktai
+projects: Investiciniai projektai
+search: Paieška
+detail_search: Detali paieška
+favorite_objects_url: isimintini-objektai
+commercial: Komercinis turtas
+house: Namas
+flat: Butas
+site: Žemės sklypas
+brick_wall: Blokinis
+monolithic: Monolitas
+stone: Mūrinis
+wood: Medinis
+hangar: Metalinis
+rooms_for_commercials: Patalpų sk.
+framehouse: Karkasinis
+full: Visa apdaila
+part: Dalinė apdaila
+partial_repairs: Suremontuotas
+good: Tvarkingas
+need_repairs: Remontuotinas
+roofed_box: Neįrengtas/statomas
+other: Kita
+heating_central: Centrinis
+heating_city: Centrinis-kolektorinis
+heating_gas: Dujinis
+heating_solid_fuel: Kietu kuru
+heating_electric: Elektrinis
+has_tv: Televizorius
+has_refridgerator: Šaldytuvas
+has_fireside: Židinys
+has_keylocked_stairway: Kodinė laiptinės spyna
+has_conditioning: Kondicionierius
+has_terrace: Terasa
+has_phone: Telefono linija
+has_open_kitchen: Virtuvė sujungta su kamb.
+has_kitchen: Buitinė technika
+has_basement: Rūsys
+has_with_second_floor: Butas per kelis aukštus
+has_parquet: Parketas
+has_wc_bath_separate: Tualetas ir vonia atskirai
+has_parking_place: Vieta automobiliui
+has_lift: Liftas
+has_alarm: Signalizacija
+has_wahing_machine: Skalbimo mašina
+has_packet_windows: Langai su stiklo paketais
+has_furniture: Su baldais
+has_bath: Vonia
+has_detail_plan: Detalus planas
+has_high_ceiling: Aukštos lubos
+has_cable_tv: Kabelinė televizija
+has_balcony: Balkonas
+has_lumber_room: Sandėliukas
+has_internet: Internetas
+has_dressing_room: Rūbinė
+has_armed_doors: Šarvuotos durys
+has_bathhouse: Pirtis
+has_local_plumbing: Vietinė kanalizacija
+has_near_water: Šalia vandens tvenkinio
+has_good_access: Geras privažiavimas
+has_electricity: Elektra
+has_boiler: Boileris
+has_wavin_pipes: Wavin vamzdžiai
+has_water: Vandentiekis
+has_city_plumbing: Miesto kanalizacija
+has_shower: Dušas
+has_electricity_380V: Elektra 3x380V
+has_water_pool: Baseinas
+has_gas: Dujos
+has_outdoor_terrace: Lauko terasa
+has_local_feeding: Maitinimo įstaiga pastate
+has_cargo_elevator: Krovininis liftas
+has_street_entrance: Įėjimas iš gatvės
+has_security: Apsauga
+has_conference_hall: Konferencijų salė pastate
+has_separate_entryway: Atskiras įėjimas
+has_room_conditioning: Patalpų kondicionavimas
+has_asphalt_entrance: Patogus privažiavimas
+has_plumbing: Kanalizacija
+house: Namas
+house_part: Sublokuotas
+cottage: Kotedžas
+summerhouse: Sodyba/Vasarnamis
+lt_currency_whole: Lt
+lt_currency_without_vat_whole: Lt (be PVM)
+lt_currency_per_sq: Lt/kv.m
+lt_currency_without_vat_per_sq: Lt/kv.m (be PVM)
+purpose_office: Administracinės
+purpose_manufacture: Gamybinės
+purpose_other: Kitos paskirties
+purpose_food: Maitinimo
+purpose_building: Pastatas
+purpose_buisness: Prekybos
+purpose_store: Sandėliavimo
+commercial_purpose: Komercinė
+agriculture_purpose: Žemės ūkio
+forest_purpose: Miškų ūkio
+other_purpose: Kita
+residential_skyscraper_purpose: Gyvenamoji
+residential_skyscraper_purpose_full: Daugiaaukštė gyvenamoji
+residential_purpose: Namų valdos
+manufacturing_purpose: Komercinė
+recreation_purpose: Rekreacinė
+garden_purpose: Sodų
+municipality: Savivaldybė
+building_equipment: Neįrengta
+area: Plotas
+rooms: Kamb.
+rooms_count: Kamb. sk.
+rent_and_sale: Pardavimas ir nuoma
+rent: Nuoma
+sale: Pardavimas
+city: 'Miestas/Gyvenvietė'
+microblock: Mikrorajonas
+years: Metai
+from: nuo
+till: iki
+search: Ieškoti
+price: Kaina
+page_nr: Puslapis
+street: Gatvė
+floor: Aukštas
+main_info: Pagrindinė informacija
+house_type: Namo tipas
+heating: Šildymas
+equipment: Įrengimo lygis
+square_price: 1 m<sup>2</sup> kaina
+description: Aprašymas
+contacts: Kontaktai
+site_area: Sklypo plotas, a
+building_year: Statybos metai
+purpose: Paskirtis
+building_material: Statybos medžiaga
+rent_price: Nuomos kaina
+phone_no: Tel. nr.
+email: El. paštas
+extras: Ypatumai
+no_results: Atsiprašome, neradome objektų. Patikslinkite paieškos kriterijus.
+more_info: Plačiau
+district: Mikrorajonas
+operation: Tikslas
+house_area: Namo plotas, m<sup>2</sup>
+floor_count: Aukštų skaičius
+are_price: Aro kaina
+type: Tipas
+for_sale: Pardavimas
+for_rent: Nuoma
+for_sale_rent: Pardavimas ir nuoma
+do_search: Ieškoti
+in_partneship_with_bpt: Bendradarbiaujant su BPT
+about_litectus: Apie Litectus
+read_more: Skaityti daugiau
+slideshow: Peržiūra
+photos: Nuotraukos
+plan: Planas
+map: Žemėlapis
+back_to_list: grįžti į sąrašą
+similar_objects: Panašūs objektai
+contact_persons: Kontaktiniai asmenys
+show_total_results: Iš viso rezultatų
+paging: Rodyti po
+area_from: Plotai nuo
+address: Adresas
+land_plots_list: Žemės sklypų sąrašas
+flat_list: Butų sąrašas
+commercial_list: Kom. patalpų sąrašas
+house_list: Namų sąrašas
+have_questions: Norite paklausti?
+sq_m: m<sup>2</sup>
+more_objects: visi objektai
+
+all_objects: Visi objektai
+purpose_office_title: Biurų
+purpose_food_title: Maitinimo
+purpose_buisness_title: Prekybos
+purpose_store_title: Sandėliavimo
+purpose_manufacture_title: Gamybos
+flats: Butai
+houses: Namai
+
+add_to_favorite: įsiminti
+advanced_search: Detalioji paieška
+choose_category: Pasirinkite kategorija
+order_by: Rūšiuoti pagal
+order_by_date: Datą
+order_by_price: Kainą
+order_by_area: Plotą
+houses_and_flats: 'Butai ir namai'
+in_partneship_with: Bendradarbiaujant su
+about_url: apie-mus
+about_litectus_index_text: 'UAB „Litectus“ yra tarptautinės SEB banko grupės bendrovė, bendradarbiaujanti su Lietuvoje  veikiančia SEB banko grupe, tačiau savo turto portfelį valdanti savarankiškai. Šį turtą sudaro gyvenamasis ir komercinis nekilnojamasis turtas, nebaigtos statybos projektai ir įvairios paskirties žemės sklypai.'
+in_partneship_with_bpt_text: ''
+uniq_id: Unikalus nr.
+
+streets: Gatvės
+select_district: Pasirinkite mikrorajonus
+select_streets: Pasirinkite gatves
+districts: Mikrorajonai
+select_all_streets: Pažymėti visas gatves
+select: Pasirinkti
+select_all_districts: Pažymėti visus mikrorajonus
+delete_selections: Išvalyti pasirinkimus
+change: Keisti
+enter_disctric: Įveskite mikrorajono pavadinimą
+enter_street: Įveskite gatvės pavadinimą

@@ -188,4 +188,6 @@ $lang['floor_count'] = 'Aukštų skaičius';
 $lang['are_price'] = 'Aro kaina';
 $lang['type'] = 'Tipas';
 $lang['newest_offers'] = 'Naujausi objektai';
+
+$lang['roofed_box'] = 'Neįrengtas/statomas';
 ?>
