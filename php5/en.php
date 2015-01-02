@@ -72,10 +72,10 @@ $lang["house_part"] = "House part";
 $lang["cottage"] = "Cottage";
 $lang["summerhouse"] = "Summerhouse";
 
-$lang['lt_currency_whole'] = 'Lt';
-$lang['lt_currency_without_vat_whole'] = 'Lt (be PVM)';
-$lang['lt_currency_per_sq'] = 'Lt/kv.m';
-$lang['lt_currency_without_vat_per_sq'] = 'Lt/kv.m (be PVM)';
+$lang['currency_whole'] = 'EUR';
+$lang['currency_without_vat_whole'] = 'EUR (be PVM)';
+$lang['currency_per_sq'] = 'EUR/kv.m';
+$lang['currency_without_vat_per_sq'] = 'EUR/kv.m (be PVM)';
 
 $lang["purpose_office"] = "Office";
 $lang["purpose_manufacture"] = "Manufacture";

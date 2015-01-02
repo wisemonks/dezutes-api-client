@@ -74,10 +74,10 @@ $lang["house_part"] = "Дом части";
 $lang["cottage"] = "Коттедж";
 $lang["summerhouse"] = "Саммерхаус";
 
-$lang['lt_currency_whole'] = 'Lt';
-$lang['lt_currency_without_vat_whole'] = 'Lt';
-$lang['lt_currency_per_sq'] = 'Lt/kv.m';
-$lang['lt_currency_without_vat_per_sq'] = 'Lt/kv.m';
+$lang['currency_whole'] = 'EUR';
+$lang['currency_without_vat_whole'] = 'EUR';
+$lang['currency_per_sq'] = 'EUR/kv.m';
+$lang['currency_without_vat_per_sq'] = 'EUR/kv.m';
 
 $lang["purpose_office"] = "Офис";
 $lang["purpose_manufacture"] = "Производство";

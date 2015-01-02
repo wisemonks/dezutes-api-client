@@ -115,10 +115,10 @@ $lang['cottage'] = 'Kotedžas';
 $lang['summerhouse'] = 'Sodyba/Vasarnamis';
 $lang['other'] = 'Kita';
 
-$lang['lt_currency_whole'] = 'Lt';
-$lang['lt_currency_without_vat_whole'] = 'Lt (be PVM)';
-$lang['lt_currency_per_sq'] = 'Lt/kv.m';
-$lang['lt_currency_without_vat_per_sq'] = 'Lt/kv.m (be PVM)';
+$lang['currency_whole'] = 'EUR';
+$lang['currency_without_vat_whole'] = 'EUR (be PVM)';
+$lang['currency_per_sq'] = 'EUR/kv.m';
+$lang['currency_without_vat_per_sq'] = 'EUR/kv.m (be PVM)';
 
 $lang['purpose_office'] = 'administracinės';
 $lang['purpose_manufacture'] = 'gamybinės';
@@ -128,8 +128,8 @@ $lang['purpose_building'] = 'pastatas';
 $lang['purpose_buisness'] = 'prekybos';
 $lang['purpose_store'] = 'sandėliavimo';
 
-$lang['site']['lt_currency_per_sq'] = 'Lt/a';
-$lang['site']['lt_currency_without_vat_per_sq'] = 'Lt/a (be PVM)';
+$lang['site']['currency_per_sq'] = 'EUR/a';
+$lang['site']['currency_without_vat_per_sq'] = 'EUR/a (be PVM)';
 $lang['commercial'] = 'komercinės';
 $lang['agriculture'] = 'žemės ūkio';
 $lang['forest'] = 'miškų ūkio';
