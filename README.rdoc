@@ -22,7 +22,7 @@
   $dezutes = new DezutesClient($subdomain, $api_key);
 
   #Gražiname informacija apie 25 pigiausius parduodamus namus
-  $estates_xml = $dezutes -> getEstates(array('estate_type' => 'houses', 'sort_by' => 'sale_price', 'sort_to' => 'asc',   'limit' => 25, 'for_sale' => 1));
+  $estates_xml = $dezutes -> getEstates(array('estate_type' => 'house', 'for_sale' => 1, 'sort_by' => 'sale_price', 'sort_to' => 'asc',   'per_page' => 25, 'page' => 1));
 
   $xml_parser = new XML_Unserializer(array('parseAttributes' => true));
   $xml_parser -> unserialize($estates_xml);
@@ -33,7 +33,7 @@
   ?>
 
 == Daugiau informacijos
-{http://api.dezutes.lt}[http://api.dezutes.lt]
+{http://api.dezutes.lt/Dezutes.html}[http://api.dezutes.lt]
 
 == Kalbinės reikšmės
 {https://github.com/wisemonks/dezutes-api-client/blob/master/php5/lt.php}[https://github.com/wisemonks/dezutes-api-client/blob/master/php5/lt.php]
@@ -46,4 +46,4 @@ Mob.tel. +370 616 34780
 
 El.p. info@wisemonks.com
 
-Visos teisės saugomos (c) 2008-2013 {WISE MONKS - Verslo valdymo sistemos}[http://www.wisemonks.com/verslo-valdymo-sistemos.html]
+{http://www.wisemonks.com}[http://www.wisemonks.com]
