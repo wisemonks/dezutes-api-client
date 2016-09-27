@@ -1,0 +1,1200 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class Dezutes - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+<div class="nav-section">
+  <h3>Table of Contents</h3>
+
+  <ul class="link-list" role="directory">
+    <li><a href="#class-Dezutes-label-API+dokumentacijos+intro">API dokumentacijos intro</a>
+    <li><a href="#class-Dezutes-label-Duomen-C5-B3+apsikeitimas">Duomenų apsikeitimas</a>
+  </ul>
+</div>
+
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link">Object
+  
+</div>
+
+    <div id="includes-section" class="nav-section">
+  <h3>Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><span class="include">HTTParty</span>
+  
+  
+  </ul>
+</div>
+
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-c-new">::new</a>
+    
+    <li ><a href="#method-i-get_broker">#get_broker</a>
+    
+    <li ><a href="#method-i-get_brokers">#get_brokers</a>
+    
+    <li ><a href="#method-i-get_estate">#get_estate</a>
+    
+    <li ><a href="#method-i-get_estate_blocks">#get_estate_blocks</a>
+    
+    <li ><a href="#method-i-get_estate_cities">#get_estate_cities</a>
+    
+    <li ><a href="#method-i-get_estate_count">#get_estate_count</a>
+    
+    <li ><a href="#method-i-get_estate_municipalities">#get_estate_municipalities</a>
+    
+    <li ><a href="#method-i-get_estate_photo_versions">#get_estate_photo_versions</a>
+    
+    <li ><a href="#method-i-get_estate_photos">#get_estate_photos</a>
+    
+    <li ><a href="#method-i-get_estate_statuses">#get_estate_statuses</a>
+    
+    <li ><a href="#method-i-get_estates">#get_estates</a>
+    
+    <li ><a href="#method-i-get_offices">#get_offices</a>
+    
+    <li ><a href="#method-i-get_project">#get_project</a>
+    
+    <li ><a href="#method-i-get_project_count">#get_project_count</a>
+    
+    <li ><a href="#method-i-get_project_estates">#get_project_estates</a>
+    
+    <li ><a href="#method-i-get_project_photo_versions">#get_project_photo_versions</a>
+    
+    <li ><a href="#method-i-get_project_photos">#get_project_photos</a>
+    
+    <li ><a href="#method-i-get_projects">#get_projects</a>
+    
+    <li ><a href="#method-i-send_request">#send_request</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-Dezutes">
+  <h1 id="class-Dezutes" class="class">
+    class Dezutes
+  </h1>
+
+  <section class="description">
+    
+<h1 id="class-Dezutes-label-API+dokumentacijos+intro">API dokumentacijos intro<span><a href="#class-Dezutes-label-API+dokumentacijos+intro">&para;</a> <a href="#top">&uarr;</a></span></h1>
+
+<p>Dežutės.lt - NT valdymo įrankis. Šio dokumento esmė paaiškinti kokiais
+būdais vyksta apsikeitimai tarp Dežutės.lt sistemos ir kliento(nt
+agentūros) svetainės.</p>
+
+<h1 id="class-Dezutes-label-Duomen-C5-B3+apsikeitimas">Duomenų apsikeitimas<span><a href="#class-Dezutes-label-Duomen-C5-B3+apsikeitimas">&para;</a> <a href="#top">&uarr;</a></span></h1>
+
+<p>Duomenų apsikeitimas vyksta REST principu. Šiuo metu pilnai palaikomas tik
+GET metodas(ateityje planuojamas POST/PUT/DELETE metodu realizavimas).
+Duomenis atiduodami XML ir JSON formatu. Naudotojai identifikuojami Auth
+Basic principu. Vartotojo vardas naudojamas Dezutes.lt įmonės subdomainas
+pvz. <strong>wisemonks</strong>.dezutes.lt. Slaptažodis - api_key
+raktas(md5 string), sugeneruotas Dezutes.lt sistemos.</p>
+
+  </section>
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(subdomain, api_key)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File ruby/dezutes.rb, line 36</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">subdomain</span>, <span class="ruby-identifier">api_key</span>)
+  <span class="ruby-ivar">@auth</span> = {<span class="ruby-value">:username</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">subdomain</span>, <span class="ruby-value">:password</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">api_key</span>}
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-get_broker" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_broker</span><span
+            class="method-args">(id)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Brokerio informacija</p>
+          
+          
+
+          
+          <div class="method-source-code" id="get_broker-source">
+            <pre><span class="ruby-comment"># File ruby/dezutes.rb, line 299</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_broker</span>(<span class="ruby-identifier">id</span>)
+  <span class="ruby-identifier">send_request</span>(<span class="ruby-node">&quot;/brokers/#{id}&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_brokers" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_brokers</span><span
+            class="method-args">(*args)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Brokerių sąrašas</p>
+
+<h4 id="method-i-get_brokers-label-Duomen-C5-B3+r-C5-AB-C5-A1iavimas-2C+r-C5-AB-C5-A1iavimo+kryptis-3A">Duomenų rūšiavimas, rūšiavimo kryptis:<span><a href="#method-i-get_brokers-label-Duomen-C5-B3+r-C5-AB-C5-A1iavimas-2C+r-C5-AB-C5-A1iavimo+kryptis-3A">&para;</a> <a href="#top">&uarr;</a></span></h4>
+<ul><li>
+<p>sort_by | type: option, default=name | Rūšiuoti pagal:</p>
+<ul><li>
+<p>name - vardą</p>
+</li><li>
+<p>phone - telefono numerį</p>
+</li><li>
+<p>email - el.paštą</p>
+</li></ul>
+</li><li>
+<p>sort_to | type: option, default=asc | Rūšiavimo kryptis:</p>
+<ul><li>
+<p>asc</p>
+</li><li>
+<p>desc</p>
+</li></ul>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="get_brokers-source">
+            <pre><span class="ruby-comment"># File ruby/dezutes.rb, line 294</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_brokers</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">send_request</span>(<span class="ruby-string">&quot;/brokers&quot;</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_estate" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_estate</span><span
+            class="method-args">(id, *args)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Gražinamas konkretus NT objektas, pagal ID</p>
+
+<h4 id="method-i-get_estate-label-Spec.parametrai">Spec.parametrai<span><a href="#method-i-get_estate-label-Spec.parametrai">&para;</a> <a href="#top">&uarr;</a></span></h4>
+<ul><li>
+<p>photo_version | type:option, default=original | Nuotraukos versija.
+Grąžinama tik viena pagrindinė objekto nuotrauka. Visos nuotraukų versijos
+žiūr. į <a
+href="Dezutes.html#method-i-get_estate_photo_versions">#get_estate_photo_versions</a></p>
+</li></ul>
+
+<h4 id="method-i-get_estate-label-U-C5-BEklausos+pvz-3A">Užklausos pvz:<span><a href="#method-i-get_estate-label-U-C5-BEklausos+pvz-3A">&para;</a> <a href="#top">&uarr;</a></span></h4>
+
+<pre class="ruby"><span class="ruby-identifier">get_estate</span>(<span class="ruby-value">76943</span>, {:<span class="ruby-identifier">photo_version</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&#39;site_thumb&#39;</span>})
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="get_estate-source">
+            <pre><span class="ruby-comment"># File ruby/dezutes.rb, line 133</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_estate</span>(<span class="ruby-identifier">id</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">send_request</span>(<span class="ruby-node">&quot;/estate/#{id}&quot;</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_estate_blocks" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_estate_blocks</span><span
+            class="method-args">(*args)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Mikrorajonų sąrašas</p>
+
+<p>Grąžinamas tik realus mikrorajonų sąrašas t.y. tik tie mikrorajonai, kurios
+turi sąryšius su NT objektais</p>
+
+<p>Rezultatą galime filtruoti pagal <a
+href="Dezutes.html#method-i-get_estates">#get_estates</a> metodo parametrus</p>
+
+<h4 id="method-i-get_estate_blocks-label-U-C5-BEklausos+pvz-3A">Užklausos pvz:<span><a href="#method-i-get_estate_blocks-label-U-C5-BEklausos+pvz-3A">&para;</a> <a href="#top">&uarr;</a></span></h4>
+
+<pre class="ruby"><span class="ruby-comment">#Visi Kauno miesto mikrorajonai</span>
+<span class="ruby-identifier">get_estate_blocks</span>(:<span class="ruby-identifier">city</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">2</span>)
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="get_estate_blocks-source">
+            <pre><span class="ruby-comment"># File ruby/dezutes.rb, line 198</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_estate_blocks</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">send_request</span>(<span class="ruby-string">&quot;/blocks&quot;</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_estate_cities" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_estate_cities</span><span
+            class="method-args">(*args)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Miestų/gyvenviečių sąrašas</p>
+
+<p>Grąžinamas tik realus miestų sąrašas t.y. tik tie miestai, kurios turi
+sąryšius su NT objektais</p>
+
+<p>Rezultatą galime filtruoti pagal <a
+href="Dezutes.html#method-i-get_estates">#get_estates</a> metodo parametrus</p>
+
+<h4 id="method-i-get_estate_cities-label-U-C5-BEklausos+pvz-3A">Užklausos pvz:<span><a href="#method-i-get_estate_cities-label-U-C5-BEklausos+pvz-3A">&para;</a> <a href="#top">&uarr;</a></span></h4>
+
+<pre class="ruby"><span class="ruby-comment">#Visi Vilniaus savivaldybės miestai</span>
+<span class="ruby-identifier">get_estate_cities</span>(:<span class="ruby-identifier">municipality</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">461</span>)
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="get_estate_cities-source">
+            <pre><span class="ruby-comment"># File ruby/dezutes.rb, line 184</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_estate_cities</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">send_request</span>(<span class="ruby-string">&quot;/cities&quot;</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_estate_count" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_estate_count</span><span
+            class="method-args">(*args)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Metodas skirtas NT objektų kiekiui grąžinti</p>
+
+<p>Kiekis grąžinamas pagal &#39;Duomenų filtravimo parametrus&#39; nurodytus
+metode <a href="Dezutes.html#method-i-get_estates">#get_estates</a></p>
+
+<h4 id="method-i-get_estate_count-label-U-C5-BEklausos+pvz-3A">Užklausos pvz:<span><a href="#method-i-get_estate_count-label-U-C5-BEklausos+pvz-3A">&para;</a> <a href="#top">&uarr;</a></span></h4>
+
+<pre class="ruby"><span class="ruby-comment">#Bendras butu ir namu kiekis</span>
+<span class="ruby-identifier">get_estate_count</span>(:<span class="ruby-identifier">estate_type</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&#39;flat,house&#39;</span>)
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="get_estate_count-source">
+            <pre><span class="ruby-comment"># File ruby/dezutes.rb, line 156</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_estate_count</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">send_request</span>(<span class="ruby-string">&quot;/estates_count&quot;</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_estate_municipalities" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_estate_municipalities</span><span
+            class="method-args">(*args)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Savivaldybių sąrašas</p>
+
+<p>Grąžinamas tik realus savivaldybių sąrašas t.y. tik tos savialdybės, kurios
+turi sąryšius su NT objektais</p>
+
+<p>Rezultatą galime filtruoti pagal <a
+href="Dezutes.html#method-i-get_estates">#get_estates</a> metodo parametrus</p>
+
+<h4 id="method-i-get_estate_municipalities-label-U-C5-BEklausos+pvz-3A">Užklausos pvz:<span><a href="#method-i-get_estate_municipalities-label-U-C5-BEklausos+pvz-3A">&para;</a> <a href="#top">&uarr;</a></span></h4>
+
+<pre class="ruby"><span class="ruby-comment">#Visos savivaldybės, kuriose turime namų</span>
+<span class="ruby-identifier">get_estate_municipalities</span>(:<span class="ruby-identifier">estate_type</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&#39;house&#39;</span>)
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="get_estate_municipalities-source">
+            <pre><span class="ruby-comment"># File ruby/dezutes.rb, line 170</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_estate_municipalities</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">send_request</span>(<span class="ruby-string">&quot;/municipalities&quot;</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_estate_photo_versions" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_estate_photo_versions</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>NT objektų nuotraukų versijų sąrašas</p>
+          
+          
+
+          
+          <div class="method-source-code" id="get_estate_photo_versions-source">
+            <pre><span class="ruby-comment"># File ruby/dezutes.rb, line 264</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_estate_photo_versions</span>
+  <span class="ruby-identifier">send_request</span>(<span class="ruby-string">&quot;/estate_photo_versions&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_estate_photos" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_estate_photos</span><span
+            class="method-args">(id, *args)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p><strong>Visos</strong> konkretaus NT objekto nuotraukos</p>
+
+<h4 id="method-i-get_estate_photos-label-Spec.parametrai">Spec.parametrai<span><a href="#method-i-get_estate_photos-label-Spec.parametrai">&para;</a> <a href="#top">&uarr;</a></span></h4>
+<ul><li>
+<p>photo_versions | type:array of options, <a href="original">default=</a> |
+Pageidaujamos nuotraukų versijos. Visos nuotraukų versijos žiūr. į <a
+href="Dezutes.html#method-i-get_estate_photo_versions">#get_estate_photo_versions</a></p>
+</li><li>
+<p>limit | type:integer | Nuotraukų skaičius</p>
+</li></ul>
+
+<h4 id="method-i-get_estate_photos-label-U-C5-BEklausos+pvz-3A">Užklausos pvz:<span><a href="#method-i-get_estate_photos-label-U-C5-BEklausos+pvz-3A">&para;</a> <a href="#top">&uarr;</a></span></h4>
+
+<pre class="ruby"><span class="ruby-identifier">get_estate_photos</span>(<span class="ruby-value">16252</span>, {:<span class="ruby-identifier">photo_versions</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-string">&#39;site_thumb&#39;</span>, <span class="ruby-string">&#39;original&#39;</span>]})
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="get_estate_photos-source">
+            <pre><span class="ruby-comment"># File ruby/dezutes.rb, line 145</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_estate_photos</span>(<span class="ruby-identifier">id</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">send_request</span>(<span class="ruby-node">&quot;/estates/#{id}/photos&quot;</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>);
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_estate_statuses" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_estate_statuses</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>NT objektų statusų sąrašas</p>
+          
+          
+
+          
+          <div class="method-source-code" id="get_estate_statuses-source">
+            <pre><span class="ruby-comment"># File ruby/dezutes.rb, line 259</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_estate_statuses</span>
+  <span class="ruby-identifier">send_request</span>(<span class="ruby-string">&quot;/estate_statuses&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_estates" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_estates</span><span
+            class="method-args">(*args)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Metodas skirtas NT objektu sarasui gauti. Grąžinamą sąrašą galimę filtruoti
+pagal metodui perduodamus parametrus.</p>
+
+<h4 id="method-i-get_estates-label-Duomen-C5-B3+filtravimo+parametrai-3A">Duomenų filtravimo parametrai:<span><a href="#method-i-get_estates-label-Duomen-C5-B3+filtravimo+parametrai-3A">&para;</a> <a href="#top">&uarr;</a></span></h4>
+<ul><li>
+<p>estate_type   |   type:option, values=commercial, house, flat, site |  NT
+tipas. Galima nurodyti kelis tipus, pvz. estate_type=commercial,site</p>
+</li><li>
+<p>broker  | type:integer  | Brokerio ID</p>
+</li><li>
+<p>municipality | type:integer | Savialdybė</p>
+</li><li>
+<p>city | type:integer | Miesto ID</p>
+</li><li>
+<p>block | type:integer | Mikrorajono ID</p>
+</li><li>
+<p>street | type:varchar | Gatvės paieška pagal pavadinimą ar pavadinimo dalį</p>
+</li><li>
+<p>project | type:integer | Projekto ID</p>
+</li><li>
+<p>belongs_to_project | type: boolean | Tik tie kurie yra priskirti projektui.
+Naudojamas, tais atvejais kai norima gauti visus Projektams priklausančius
+objektus</p>
+</li><li>
+<p>area_from | type:float | Plotas nuo</p>
+</li><li>
+<p>area_till | type:float | Plotas iki</p>
+</li><li>
+<p>for_sale | type:boolean | Ar NT parduodamas? | for_sale=1</p>
+</li><li>
+<p>for_rent | type:boolean | Ar NT nuomojamas? | for_rent=1</p>
+</li><li>
+<p>operation | type:option values = for_sale, for_rent | Alternatyvus
+nurodymas gauti parduodamus ar nuomojamus objektus | operation=for_sale</p>
+</li><li>
+<p>status | type:integer | Objekto statusas Dežutėse. Objektų sąrašo gavimas
+žiūr. į metodą <a
+href="Dezutes.html#method-i-get_estate_statuses">#get_estate_statuses</a></p>
+</li><li>
+<p>statuses | type:array | Pagal kelis objektų statusus | statuses</p>
+</li><li>
+<p>price_from | type:float | Kaina nuo(imtinai) | price_from=400000</p>
+</li><li>
+<p>price_till | type:float | Kaina iki(imtinai)</p>
+</li><li>
+<p>square_price_from | type:float | Kv. m kaina nuo(imtinai) |
+square_price_from=400000</p>
+</li><li>
+<p>square_price_till | type:float | Kv. m kaina iki(imtinai)</p>
+</li><li>
+<p>rooms | type:float | Tikslus kamb.sk. Pvz. rooms=3 - rasti NT objektus su 3
+kambariais/patalpomis.</p>
+</li><li>
+<p>room_count_from | type:integer | Kambarių skaičius nuo(imtinai).</p>
+</li><li>
+<p>room_count_till | type:integer | Kambarių skaičius iki(imtinai).</p>
+</li><li>
+<p>floor_count_from | type:integer | Aukštų skaičius pastate nuo(imtinai).</p>
+</li><li>
+<p>floor_count_till | type:integer | Aukštų skaičius pastate iki(imtinai).</p>
+</li><li>
+<p>floor_from | type:integer | Buto ar patalpų aukštas nuo(imtinai).</p>
+</li><li>
+<p>floor_till | type:integer | Buto ar patalpų aukštas iki(imtinai).</p>
+</li><li>
+<p>year_from | type:integer | Pastato statybos metai nuo(imtinai).</p>
+</li><li>
+<p>year_till | type:integer | Pastato statybos metai iki(imtinai).</p>
+</li><li>
+<p>purpose | type:varchar | Komercinio objekto arba sklypo paskirtis</p>
+</li><li>
+<p>purposes | type:array| Komercinio objekto paskirtys pvz. Rasti sandėliavimo
+IR gamybinės patalpas - purposes=purpose_store,purpose_manufacture</p>
+</li><li>
+<p>purposes_join | type: option, values = or, and. Komercinio objektų pagal
+paskirtis užklausos formavimo nustatymas. Pvz. Užklausa
+&#39;purposes=purpose_store,purpose_manufacture&amp;purposes_join=or&#39;
+grąžins sandėliavimo ARBA gamybinės patalpas</p>
+</li><li>
+<p>house_building_type | type:string | Pagal namo tipą.</p>
+</li><li>
+<p>new_estate | type:boolean | Tinklapio nustatymai “Naujas objektas” |
+new_estate=1</p>
+</li><li>
+<p>top_estate | type:boolean | Tinklapio nustatymai “Top objektas” |
+top_estate=1</p>
+</li><li>
+<p>projects | type:array | Objektų filtravimas pagal priskirtus projektus |
+projects=25,27</p>
+</li><li>
+<p>belongs_to_project | type:boolean | Objektai priklausantis projektams,
+nenurodant projektų id | belongs_to_project=1</p>
+</li><li>
+<p>no_project | type:boolean | Objektai nepriklausantis projektams |
+no_project=1</p>
+</li><li>
+<p>latitude | type:float | Paieška pagal platumą. Naudoti kartu su longitude</p>
+</li><li>
+<p>longitude | type:float | Paieška pagal ilgumą. Naudoti kartu su latitude</p>
+</li><li>
+<p>radius | type:integer | default=1 | Paieškos spindulio (km) parametras
+ilgumai, platumai.</p>
+</li></ul>
+
+<h4 id="method-i-get_estates-label-Duomen-C5-B3+ribojimo-2C+puslapiavimo+parametrai-3A">Duomenų ribojimo, puslapiavimo parametrai:<span><a href="#method-i-get_estates-label-Duomen-C5-B3+ribojimo-2C+puslapiavimo+parametrai-3A">&para;</a> <a href="#top">&uarr;</a></span></h4>
+<ul><li>
+<p>per_page | type:integer, max=250 | Grąžinamų NT objektų kiekis.</p>
+</li><li>
+<p>page | type:integer | Puslapio nr. SQL offset t.y.  sql išraiška &#39;LIMIT
+10 OFFSET 10&#39; yra lygi parametrams &#39;page = 2, per_page = 10&#39;</p>
+</li></ul>
+
+<h4 id="method-i-get_estates-label-Duomen-C5-B3+r-C5-AB-C5-A1iavimas-2C+r-C5-AB-C5-A1iavimo+kryptis-3A">Duomenų rūšiavimas, rūšiavimo kryptis:<span><a href="#method-i-get_estates-label-Duomen-C5-B3+r-C5-AB-C5-A1iavimas-2C+r-C5-AB-C5-A1iavimo+kryptis-3A">&para;</a> <a href="#top">&uarr;</a></span></h4>
+<ul><li>
+<p>sort_by | type: option, default=date | Rūšiuoti pagal:</p>
+<ul><li>
+<p>location - vietą</p>
+</li><li>
+<p>area - plotą</p>
+</li><li>
+<p>broker - brokerio vardą,pavardę</p>
+</li><li>
+<p>sale_price - pardavimo kainą</p>
+</li><li>
+<p>rent_price - nuomos kainą</p>
+</li><li>
+<p>square_sale_price - kv.m. pardavimo kainą</p>
+</li><li>
+<p>square_rent_price - k.m. nuomos kainą</p>
+</li><li>
+<p>date - sukūrimo datą</p>
+</li><li>
+<p>edit_time - redagavimo datą</p>
+</li><li>
+<p>floor - aukštą</p>
+</li><li>
+<p>floor_count - aukštų skaičių</p>
+</li><li>
+<p>site_area - sklypo plotą. Tinka tik kai estate_type=house</p>
+</li><li>
+<p>rand - atsitiktine tvarka</p>
+</li></ul>
+</li><li>
+<p>sort_to | type: option, default=desc | Rūšiavimo kryptis:</p>
+<ul><li>
+<p>asc</p>
+</li><li>
+<p>desc</p>
+</li></ul>
+</li></ul>
+
+<h4 id="method-i-get_estates-label-Spec.parametrai">Spec.parametrai<span><a href="#method-i-get_estates-label-Spec.parametrai">&para;</a> <a href="#top">&uarr;</a></span></h4>
+<ul><li>
+<p>extended_info | type:boolean, default=0 | Išplėstinė objektų informacija</p>
+</li><li>
+<p>description_lang | type:string | Aprašymo kalba (kai kurios agentūros saugo
+NT objektus keliomis kalbomis) pvz. description_lang=en</p>
+</li><li>
+<p>photo_version | type:option, default=original | Nuotraukos versija. Visos
+nuotraukų versijos žiūr. į <a
+href="Dezutes.html#method-i-get_estate_photo_versions">#get_estate_photo_versions</a></p>
+</li></ul>
+
+<h4 id="method-i-get_estates-label-U-C5-BEklausos+pvz-3A">Užklausos pvz:<span><a href="#method-i-get_estates-label-U-C5-BEklausos+pvz-3A">&para;</a> <a href="#top">&uarr;</a></span></h4>
+
+<pre>#50 pigiausi praduodami butai Vilniaus mieste
+get_estates(:estate_type =&gt; &#39;flat&#39;, :for_sale =&gt; 1, :city =&gt; 1, :per_page = 50, :sort_by =&gt; &#39;price&#39;, :sort_to =&gt; &#39;asc&#39;)
+
+#20 naujausių nuomojamų kom.patalpų pasiūlymų, didesnių nei 50 kv.m.
+get_estates(:estate_type =&gt; &#39;commercial&#39;, :for_rent =&gt; 1, :per_page =&gt; 20, :sort_by =&gt; &#39;date&#39;)</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="get_estates-source">
+            <pre><span class="ruby-comment"># File ruby/dezutes.rb, line 122</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_estates</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">send_request</span>(<span class="ruby-string">&quot;/estates&quot;</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_offices" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_offices</span><span
+            class="method-args">(*args)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Ofisų sąrašas</p>
+          
+          
+
+          
+          <div class="method-source-code" id="get_offices-source">
+            <pre><span class="ruby-comment"># File ruby/dezutes.rb, line 304</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_offices</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">send_request</span>(<span class="ruby-string">&quot;/offices&quot;</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_project" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_project</span><span
+            class="method-args">(id, *args)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Gražinamas konkretus NT projektas, pagal ID</p>
+
+<h4 id="method-i-get_project-label-Spec.parametrai">Spec.parametrai<span><a href="#method-i-get_project-label-Spec.parametrai">&para;</a> <a href="#top">&uarr;</a></span></h4>
+<ul><li>
+<p>photo_version | type:option, default=original | Nuotraukos versija.
+Grąžinama tik viena pagrindinė projekto nuotrauka. Visos nuotraukų versijos
+žiūr. į <a
+href="Dezutes.html#method-i-get_estate_photo_versions">#get_estate_photo_versions</a></p>
+</li></ul>
+
+<h4 id="method-i-get_project-label-U-C5-BEklausos+pvz-3A">Užklausos pvz:<span><a href="#method-i-get_project-label-U-C5-BEklausos+pvz-3A">&para;</a> <a href="#top">&uarr;</a></span></h4>
+
+<pre class="ruby"><span class="ruby-identifier">get_project</span>(<span class="ruby-value">76943</span>, {:<span class="ruby-identifier">photo_version</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&#39;index&#39;</span>})
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="get_project-source">
+            <pre><span class="ruby-comment"># File ruby/dezutes.rb, line 231</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_project</span>(<span class="ruby-identifier">id</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">send_request</span>(<span class="ruby-node">&quot;/projects/#{id}&quot;</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_project_count" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_project_count</span><span
+            class="method-args">(*args)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Metodas skirtas NT projektų kiekiui grąžinti</p>
+
+<p>Kiekis grąžinamas pagal &#39;Duomenų filtravimo parametrus&#39; nurodytus
+metode <a href="Dezutes.html#method-i-get_projects">#get_projects</a></p>
+
+<h4 id="method-i-get_project_count-label-U-C5-BEklausos+pvz-3A">Užklausos pvz:<span><a href="#method-i-get_project_count-label-U-C5-BEklausos+pvz-3A">&para;</a> <a href="#top">&uarr;</a></span></h4>
+
+<pre class="ruby"><span class="ruby-comment">#Bendras NT projektu kiekis</span>
+<span class="ruby-identifier">get_project_count</span>
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="get_project_count-source">
+            <pre><span class="ruby-comment"># File ruby/dezutes.rb, line 279</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_project_count</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">send_request</span>(<span class="ruby-string">&quot;/projects_count&quot;</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_project_estates" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_project_estates</span><span
+            class="method-args">(id, *args)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>NT objektų sąrašas, kurie priskirti prie konkretaus projekto</p>
+
+<p>Rezultatą galime filtruoti pagal <a
+href="Dezutes.html#method-i-get_estates">#get_estates</a> metodo parametrus</p>
+
+<h4 id="method-i-get_project_estates-label-U-C5-BEklausos+pvz-3A">Užklausos pvz:<span><a href="#method-i-get_project_estates-label-U-C5-BEklausos+pvz-3A">&para;</a> <a href="#top">&uarr;</a></span></h4>
+
+<pre class="ruby"><span class="ruby-comment">#NT projekto objektai, brangesni nei 1 milijonas</span>
+<span class="ruby-identifier">get_project_estates</span>(<span class="ruby-value">234</span>, {:<span class="ruby-identifier">sale_price_from</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">1000000</span>})
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="get_project_estates-source">
+            <pre><span class="ruby-comment"># File ruby/dezutes.rb, line 254</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_project_estates</span>(<span class="ruby-identifier">id</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">send_request</span>(<span class="ruby-node">&quot;/projects/#{id}/estates&quot;</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_project_photo_versions" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_project_photo_versions</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>NT projektų nuotraukų versijų sąrašas</p>
+          
+          
+
+          
+          <div class="method-source-code" id="get_project_photo_versions-source">
+            <pre><span class="ruby-comment"># File ruby/dezutes.rb, line 268</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_project_photo_versions</span>
+  <span class="ruby-identifier">send_request</span>(<span class="ruby-string">&quot;/project_photo_versions&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_project_photos" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_project_photos</span><span
+            class="method-args">(id, *args)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p><strong>Visos</strong> konkretaus NT projekto nuotraukos</p>
+
+<h4 id="method-i-get_project_photos-label-Spec.parametrai">Spec.parametrai<span><a href="#method-i-get_project_photos-label-Spec.parametrai">&para;</a> <a href="#top">&uarr;</a></span></h4>
+<ul><li>
+<p>photo_versions | type:array of options, <a href="original">default=</a> |
+Pageidaujamos nuotraukų versijos. Visos nuotraukų versijos žiūr. į <a
+href="Dezutes.html#method-i-get_project_photo_versions">#get_project_photo_versions</a></p>
+</li></ul>
+
+<h4 id="method-i-get_project_photos-label-U-C5-BEklausos+pvz-3A">Užklausos pvz:<span><a href="#method-i-get_project_photos-label-U-C5-BEklausos+pvz-3A">&para;</a> <a href="#top">&uarr;</a></span></h4>
+
+<pre class="ruby"><span class="ruby-identifier">get_estate_photos</span>(<span class="ruby-value">16252</span>, {:<span class="ruby-identifier">photo_versions</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-string">&#39;site_thumb&#39;</span>, <span class="ruby-string">&#39;original&#39;</span>]})
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="get_project_photos-source">
+            <pre><span class="ruby-comment"># File ruby/dezutes.rb, line 242</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_project_photos</span>(<span class="ruby-identifier">id</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">send_request</span>(<span class="ruby-node">&quot;/projects/#{id}/photos&quot;</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_projects" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_projects</span><span
+            class="method-args">(*args)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Projektų sąrašas Grąžinamą sąrašą galimę filtruoti pagal metodui
+perduodamus parametrus.</p>
+
+<h4 id="method-i-get_projects-label-Duomen-C5-B3+filtravimo+parametrai-3A">Duomenų filtravimo parametrai:<span><a href="#method-i-get_projects-label-Duomen-C5-B3+filtravimo+parametrai-3A">&para;</a> <a href="#top">&uarr;</a></span></h4>
+<ul><li>
+<p>municipality | type:integer | Savialdybė</p>
+</li><li>
+<p>city | type:integer | Miesto ID</p>
+</li><li>
+<p>is_investment | type:boolean(integer: 0 || 1) | Investiciniai projektai</p>
+</li><li>
+<p>is_living | type:boolean(integer: 0 || 1) | Gyvenamajieji projektai</p>
+</li><li>
+<p>is_commercial | type:boolean(integer: 0 || 1) | Komerciniai projektai</p>
+</li></ul>
+
+<pre>Projektas gali buti ir investicinis, ir komercinis, ir gyvenamasis</pre>
+
+<h4 id="method-i-get_projects-label-U-C5-BEklausos+pvz-3A">Užklausos pvz:<span><a href="#method-i-get_projects-label-U-C5-BEklausos+pvz-3A">&para;</a> <a href="#top">&uarr;</a></span></h4>
+
+<pre class="ruby"><span class="ruby-comment">#Visi Vilniaus miesto Investiciniai Komerciniai projektai</span>
+<span class="ruby-identifier">get_estate_blocks</span>(:<span class="ruby-identifier">city</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>, :<span class="ruby-identifier">is_investment</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>, :<span class="ruby-identifier">is_commercial</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>)
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="get_projects-source">
+            <pre><span class="ruby-comment"># File ruby/dezutes.rb, line 219</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_projects</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">send_request</span>(<span class="ruby-string">&quot;/projects&quot;</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="protected-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Protected Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-send_request" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">send_request</span><span
+            class="method-args">(resource_location, *args)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="send_request-source">
+            <pre><span class="ruby-comment"># File ruby/dezutes.rb, line 309</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">send_request</span>(<span class="ruby-identifier">resource_location</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">response_type</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Symbol</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">shift</span> <span class="ruby-operator">:</span> <span class="ruby-value">:xml</span>
+  <span class="ruby-identifier">options</span> = (<span class="ruby-identifier">args</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">pop</span> <span class="ruby-operator">:</span> {}).<span class="ruby-identifier">merge!</span>(
+  {
+    <span class="ruby-value">:basic_auth</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@auth</span>,
+    <span class="ruby-value">:api_key</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@auth</span>[<span class="ruby-value">:password</span>]
+  })
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">get</span>(<span class="ruby-identifier">resource_location</span>.<span class="ruby-identifier">concat</span>(<span class="ruby-node">&quot;.#{response_type}&quot;</span>), <span class="ruby-identifier">options</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.2.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

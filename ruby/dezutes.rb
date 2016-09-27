@@ -78,6 +78,9 @@ class Dezutes
   # - projects | type:array | Objektų filtravimas pagal priskirtus projektus | projects=25,27
   # - belongs_to_project | type:boolean | Objektai priklausantis projektams, nenurodant projektų id | belongs_to_project=1
   # - no_project | type:boolean | Objektai nepriklausantis projektams | no_project=1
+  # - latitude | type:float | Paieška pagal platumą. Naudoti kartu su longitude
+  # - longitude | type:float | Paieška pagal ilgumą. Naudoti kartu su latitude
+  # - radius | type:integer | default=1 | Paieškos spindulio (km) parametras ilgumai, platumai. 
   #
   #
   # ==== Duomenų ribojimo, puslapiavimo parametrai:

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>README - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+<div class="nav-section">
+  <h3>Table of Contents</h3>
+
+  <ul class="link-list" role="directory">
+    <li><a href="#label-Dezutes.lt+-+NT+valdymo+-C4-AFrankis.">Dezutes.lt - NT valdymo įrankis.</a>
+    <li><a href="#label-Dezutes.lt+API">Dezutes.lt API</a>
+    <li><a href="#label-Instrukcijos+kaip+naudotis+PHP+API+klientu-3A">Instrukcijos kaip naudotis PHP API klientu:</a>
+    <li><a href="#label-Daugiau+informacijos">Daugiau informacijos</a>
+    <li><a href="#label-Kalbin-C4-97s+reik-C5-A1m-C4-97s">Kalbinės reikšmės</a>
+    <li><a href="#label-Gamintojo+kontaktai">Gamintojo kontaktai</a>
+  </ul>
+</div>
+
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./README_rdoc.html">README</a>
+  
+    <li><a href="./php5/dezutes_api_php.html">dezutes.api.php</a>
+  
+    <li><a href="./php5/dezutes_client_php.html">dezutes.client.php</a>
+  
+    <li><a href="./php5/en_php.html">en.php</a>
+  
+    <li><a href="./php5/lt_php.html">lt.php</a>
+  
+    <li><a href="./php5/ru_php.html">ru.php</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page README.rdoc">
+
+<h1 id="label-Dezutes.lt+-+NT+valdymo+-C4-AFrankis.">Dezutes.lt - NT valdymo įrankis.<span><a href="#label-Dezutes.lt+-+NT+valdymo+-C4-AFrankis.">&para;</a> <a href="#top">&uarr;</a></span></h1>
+
+<h2 id="label-Dezutes.lt+API">Dezutes.lt API<span><a href="#label-Dezutes.lt+API">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>Duomenų apsikeitimas vyksta REST principu. Šiuo metu pilnai palaikomas tik
+GET metodas.</p>
+</li><li>
+<p>Duomenis atiduodami XML ir JSON formatu.</p>
+</li><li>
+<p>Naudotojai identifikuojami Auth Basic principu.</p>
+</li><li>
+<p>Vartotojo vardas naudojamas Dezutes.lt įmonės subdomainas pvz.
+<strong>wisemonks</strong>.dezutes.lt.</p>
+</li><li>
+<p>Slaptažodis - api_key raktas(md5 string), sugeneruotas Dezutes.lt sistemos.</p>
+</li></ul>
+
+<h2 id="label-Instrukcijos+kaip+naudotis+PHP+API+klientu-3A">Instrukcijos kaip naudotis PHP API klientu:<span><a href="#label-Instrukcijos+kaip+naudotis+PHP+API+klientu-3A">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<pre>&lt;?php
+require_once &#39;dezutes.client.php&#39;;
+#XML dokumento parsinimui rekomenduojame PEAR XML_Serializer biblioteka
+require_once &#39;XML/Unserializer.php&#39;;
+
+#Pasijungimo duomenys
+$subdomain = &#39;ntagentura&#39;;
+$api_key = &#39;8727h3bggvv4hgv9jg3hgfg2mnb4&#39;;
+
+$dezutes = new DezutesClient($subdomain, $api_key);
+
+#Gražiname informacija apie 25 brangiausius parduodamus namus
+$estates_xml = $dezutes -&gt; getEstates(array(&#39;estate_type&#39; =&gt; &#39;house&#39;, &#39;for_sale&#39; =&gt; 1, &#39;sort_by&#39; =&gt; &#39;sale_price&#39;, &#39;sort_to&#39; =&gt; &#39;desc&#39;,   &#39;per_page&#39; =&gt; 25, &#39;page&#39; =&gt; 1));
+
+$xml_parser = new XML_Unserializer(array(&#39;parseAttributes&#39; =&gt; true));
+$xml_parser -&gt; unserialize($estates_xml);
+
+#Gauname NT objektų sąrašiuką
+$estates = $xml_parser -&gt; getUnserializedData();
+
+?&gt;</pre>
+
+<h2 id="label-Daugiau+informacijos">Daugiau informacijos<span><a href="#label-Daugiau+informacijos">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p><a href="http://api.dezutes.lt/Dezutes.html">api.dezutes.lt</a></p>
+
+<h2 id="label-Kalbin-C4-97s+reik-C5-A1m-C4-97s">Kalbinės reikšmės<span><a href="#label-Kalbin-C4-97s+reik-C5-A1m-C4-97s">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p><a
+href="https://github.com/wisemonks/dezutes-api-client/blob/master/php5/lt.php">github.com/wisemonks/dezutes-api-client/blob/master/php5/lt.php</a></p>
+
+<h2 id="label-Gamintojo+kontaktai">Gamintojo kontaktai<span><a href="#label-Gamintojo+kontaktai">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p><strong>WISE MONKS, UAB</strong></p>
+
+<p>Mildos g. 4, Vilnius</p>
+
+<p>Mob.tel. +370 616 34780</p>
+
+<p>El.p. info@wisemonks.com</p>
+
+<p><a href="http://www.wisemonks.com">www.wisemonks.com</a></p>
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.2.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

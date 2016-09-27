@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>lt.php - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script src="../js/jquery.js"></script>
+<script src="../js/darkfish.js"></script>
+
+<link href="../css/fonts.css" rel="stylesheet">
+<link href="../css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../README_rdoc.html">README</a>
+  
+    <li><a href="../php5/dezutes_api_php.html">dezutes.api.php</a>
+  
+    <li><a href="../php5/dezutes_client_php.html">dezutes.client.php</a>
+  
+    <li><a href="../php5/en_php.html">en.php</a>
+  
+    <li><a href="../php5/lt_php.html">lt.php</a>
+  
+    <li><a href="../php5/ru_php.html">ru.php</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page php5/lt.php">
+
+<p>&lt;?php</p>
+
+<p>#Dėžutės.lt kalbinės reikšmės $lang = array(); $<a
+href="'brick_wall'">lang</a> = &#39;Blokinis&#39;; $<a
+href="'monolithic'">lang</a> = &#39;Monolitas&#39;; $<a
+href="'stone'">lang</a> = &#39;Mūrinis&#39;; $<a href="'wood'">lang</a> =
+&#39;Medinis&#39;; $<a href="'framehouse'">lang</a> = &#39;Karkasinis&#39;;
+$<a href="'full'">lang</a> = &#39;Visa apdaila&#39;; $<a
+href="'part'">lang</a> = &#39;Dalinė apdaila&#39;; $<a
+href="'partial_repairs'">lang</a> = &#39;Suremontuotas&#39;; $<a
+href="'good'">lang</a> = &#39;Tvarkingas&#39;; $<a
+href="'need_repairs'">lang</a> = &#39;Remontuotinas&#39;; $<a
+href="'other'">lang</a> = &#39;Kita&#39;; $<a href="'central'">lang</a> =
+&#39;Centrinis&#39;; $<a href="'city'">lang</a> =
+&#39;Centrinis-kolektorinis&#39;; $<a href="'gas'">lang</a> =
+&#39;Dujinis&#39;; $<a href="'solid_fuel'">lang</a> = &#39;Kietu kuru&#39;;
+$<a href="'electric'">lang</a> = &#39;Elektrinis&#39;; $<a
+href="'has_tv'">lang</a> = &#39;Televizorius&#39;; $<a
+href="'has_refridgerator'">lang</a> = &#39;Šaldytuvas&#39;; $<a
+href="'has_fireside'">lang</a> = &#39;Židinys&#39;; $<a
+href="'has_keylocked_stairway'">lang</a> = &#39;Kodinė laiptinės
+spyna&#39;; $<a href="'has_conditioning'">lang</a> =
+&#39;Kondicionierius&#39;; $<a href="'has_terrace'">lang</a> =
+&#39;Terasa&#39;; $<a href="'has_phone'">lang</a> = &#39;Telefono
+linija&#39;; $<a href="'has_open_kitchen'">lang</a> = &#39;Virtuvė sujungta
+su kamb.&#39;; $<a href="'has_kitchen'">lang</a> = &#39;Buitinė
+technika&#39;; $<a href="'has_basement'">lang</a> = &#39;Rūsys&#39;; $<a
+href="'has_with_second_floor'">lang</a> = &#39;Butas per kelis
+aukštus&#39;; $<a href="'has_parquet'">lang</a> = &#39;Parketas&#39;; $<a
+href="'has_wc_bath_separate'">lang</a> = &#39;Tualetas ir vonia
+atskirai&#39;; $<a href="'has_parking_place'">lang</a> = &#39;Vieta
+automobiliui&#39;; $<a href="'has_lift'">lang</a> = &#39;Liftas&#39;; $<a
+href="'has_alarm'">lang</a> = &#39;Signalizacija&#39;; $<a
+href="'has_wahing_machine'">lang</a> = &#39;Skalbimo mašina&#39;; $<a
+href="'has_packet_windows'">lang</a> = &#39;Langai su stiklo paketais&#39;;
+$<a href="'has_furniture'">lang</a> = &#39;Su baldais&#39;; $<a
+href="'has_bath'">lang</a> = &#39;Vonia&#39;; $<a
+href="'has_detail_plan'">lang</a> = &#39;Detalus planas&#39;; $<a
+href="'has_high_ceiling'">lang</a> = &#39;Aukštos lubos&#39;; $<a
+href="'has_cable_tv'">lang</a> = &#39;Kabelinė televizija&#39;; $<a
+href="'has_balcony'">lang</a> = &#39;Balkonas&#39;; $<a
+href="'has_lumber_room'">lang</a> = &#39;Sandėliukas&#39;; $<a
+href="'has_internet'">lang</a> = &#39;Internetas&#39;; $<a
+href="'has_dressing_room'">lang</a> = &#39;Rūbinė&#39;; $<a
+href="'has_armed_doors'">lang</a> = &#39;Šarvuotos durys&#39;; $<a
+href="'has_tv'">lang</a> = &#39;Televizorius&#39;; $<a
+href="'has_refridgerator'">lang</a> = &#39;Šaldytuvas&#39;; $<a
+href="'has_fireside'">lang</a> = &#39;Židinys&#39;; $<a
+href="'has_conditioning'">lang</a> = &#39;Kondicionierius&#39;; $<a
+href="'has_bathhouse'">lang</a> = &#39;Pirtis&#39;; $<a
+href="'has_phone'">lang</a> = &#39;Telefono linija&#39;; $<a
+href="'has_open_kitchen'">lang</a> = &#39;Virtuvė sujungta su kamb.&#39;;
+$<a href="'has_local_plumbing'">lang</a> = &#39;Vietinė kanalizacija&#39;;
+$<a href="'has_kitchen'">lang</a> = &#39;Buitinė technika&#39;; $<a
+href="'has_basement'">lang</a> = &#39;Rūsys&#39;; $<a
+href="'has_parquet'">lang</a> = &#39;Parketas&#39;; $<a
+href="'has_wc_bath_separate'">lang</a> = &#39;Tualetas ir vonia
+atskirai&#39;; $<a href="'has_near_water'">lang</a> = &#39;Šalia vandens
+tvenkinio&#39;; $<a href="'has_lift'">lang</a> = &#39;Liftas&#39;; $<a
+href="'has_good_access'">lang</a> = &#39;Geras privažiavimas&#39;; $<a
+href="'has_electricity'">lang</a> = &#39;Elektra&#39;; $<a
+href="'has_alarm'">lang</a> = &#39;Signalizacija&#39;; $<a
+href="'has_wahing_machine'">lang</a> = &#39;Skalbimo mašina&#39;; $<a
+href="'has_packet_windows'">lang</a> = &#39;Langai su stiklo paketais&#39;;
+$<a href="'has_furniture'">lang</a> = &#39;Su baldais&#39;; $<a
+href="'has_boiler'">lang</a> = &#39;Boileris&#39;; $<a
+href="'has_bath'">lang</a> = &#39;Vonia&#39;; $<a
+href="'has_wavin_pipes'">lang</a> = &#39;Wavin vamzdžiai&#39;; $<a
+href="'has_water'">lang</a> = &#39;Vandentiekis&#39;; $<a
+href="'has_detail_plan'">lang</a> = &#39;Detalus planas&#39;; $<a
+href="'has_city_plumbing'">lang</a> = &#39;Miesto kanalizacija&#39;; $<a
+href="'has_shower'">lang</a> = &#39;Dušas&#39;; $<a
+href="'has_electricity_380V'">lang</a> = &#39;Elektra 3x380V&#39;; $<a
+href="'has_water_pool'">lang</a> = &#39;Baseinas&#39;; $<a
+href="'has_gas'">lang</a> = &#39;Dujos&#39;; $<a
+href="'has_cable_tv'">lang</a> = &#39;Kabelinė televizija&#39;; $<a
+href="'has_outdoor_terrace'">lang</a> = &#39;Lauko terasa&#39;; $<a
+href="'has_internet'">lang</a> = &#39;Internetas&#39;; $<a
+href="'has_dressing_room'">lang</a> = &#39;Rūbinė&#39;; $<a
+href="'has_armed_doors'">lang</a> = &#39;Šarvuotos durys&#39;; $<a
+href="'has_local_feeding'">lang</a> = &#39;Maitinimo įstaiga pastate&#39;;
+$<a href="'has_cargo_elevator'">lang</a> = &#39;Krovininis liftas&#39;; $<a
+href="'has_street_entrance'">lang</a> = &#39;Įėjimas iš gatvės&#39;; $<a
+href="'has_phone'">lang</a> = &#39;Telefono linija&#39;; $<a
+href="'has_kitchen'">lang</a> = &#39;Buitinė technika&#39;; $<a
+href="'has_security'">lang</a> = &#39;Apsauga&#39;; $<a
+href="'has_lift'">lang</a> = &#39;Liftas&#39;; $<a
+href="'has_good_access'">lang</a> = &#39;Geras privažiavimas&#39;; $<a
+href="'has_electricity'">lang</a> = &#39;Elektra&#39;; $<a
+href="'has_conference_hall'">lang</a> = &#39;Konferencijų salė
+pastate&#39;; $<a href="'has_alarm'">lang</a> = &#39;Signalizacija&#39;;
+$<a href="'has_furniture'">lang</a> = &#39;Su baldais&#39;; $<a
+href="'has_water'">lang</a> = &#39;Vandentiekis&#39;; $<a
+href="'has_detail_plan'">lang</a> = &#39;Detalus planas&#39;; $<a
+href="'has_shower'">lang</a> = &#39;Dušas&#39;; $<a
+href="'has_separate_entryway'">lang</a> = &#39;Atskiras įėjimas&#39;; $<a
+href="'has_gas'">lang</a> = &#39;Dujos&#39;; $<a
+href="'has_balcony'">lang</a> = &#39;Balkonas&#39;; $<a
+href="'has_room_conditioning'">lang</a> = &#39;Patalpų
+kondicionavimas&#39;; $<a href="'has_internet'">lang</a> =
+&#39;Internetas&#39;; $<a href="'has_near_water'">lang</a> = &#39;Šalia
+vandens tvenkinio&#39;; $<a href="'has_electricity'">lang</a> =
+&#39;Elektra&#39;; $<a href="'has_asphalt_entrance'">lang</a> =
+&#39;Patogus privažiavimas&#39;; $<a href="'has_plumbing'">lang</a> =
+&#39;Kanalizacija&#39;; $<a href="'has_detail_plan'">lang</a> =
+&#39;Detalus planas&#39;; $<a href="'has_gas'">lang</a> = &#39;Dujos&#39;;
+$<a href="'has_internet'">lang</a> = &#39;Internetas&#39;;</p>
+
+<p>$<a href="'house'">lang</a> = &#39;Namas&#39;; $<a
+href="'house_part'">lang</a> = &#39;Sublokuotas&#39;; $<a
+href="'cottage'">lang</a> = &#39;Kotedžas&#39;; $<a
+href="'summerhouse'">lang</a> = &#39;Sodyba/Vasarnamis&#39;; $<a
+href="'other'">lang</a> = &#39;Kita&#39;;</p>
+
+<p>$<a href="'currency_whole'">lang</a> = &#39;EUR&#39;; $<a
+href="'currency_without_vat_whole'">lang</a> = &#39;EUR (be PVM)&#39;; $<a
+href="'currency_per_sq'">lang</a> = &#39;EUR/kv.m&#39;; $<a
+href="'currency_without_vat_per_sq'">lang</a> = &#39;EUR/kv.m (be
+PVM)&#39;;</p>
+
+<p>$<a href="'purpose_office'">lang</a> = &#39;administracinės&#39;; $<a
+href="'purpose_manufacture'">lang</a> = &#39;gamybinės&#39;; $<a
+href="'purpose_other'">lang</a> = &#39;kitos paskirties&#39;; $<a
+href="'purpose_food'">lang</a> = &#39;maitinimo&#39;; $<a
+href="'purpose_building'">lang</a> = &#39;pastatas&#39;; $<a
+href="'purpose_buisness'">lang</a> = &#39;prekybos&#39;; $<a
+href="'purpose_store'">lang</a> = &#39;sandėliavimo&#39;;</p>
+
+<p>$<a href="'site'">lang</a>[&#39;currency_per_sq&#39;] = &#39;EUR/a&#39;;
+$<a href="'site'">lang</a>[&#39;currency_without_vat_per_sq&#39;] =
+&#39;EUR/a (be PVM)&#39;; $<a href="'commercial'">lang</a> =
+&#39;komercinės&#39;; $<a href="'agriculture'">lang</a> = &#39;žemės
+ūkio&#39;; $<a href="'forest'">lang</a> = &#39;miškų ūkio&#39;; $<a
+href="'residential_skyscraper'">lang</a> = &#39;daugiaaukštės
+gyvenamoji&#39;; $<a href="'residential'">lang</a> = &#39;namų valdos&#39;;
+$<a href="'manufacturing'">lang</a> =
+&#39;pramonės/sandėliavimo/prekybos&#39;; $<a href="'recreation'">lang</a>
+= &#39;rekreacinės&#39;; $<a href="'garden'">lang</a> = &#39;sodų&#39;;</p>
+
+<p>$<a href="'commercial_title'">lang</a> = &#39;Komercinės patalpos&#39;; $<a
+href="'house_title'">lang</a> = &#39;Namai&#39;; $<a
+href="'flat_title'">lang</a> = &#39;Butai&#39;; $<a
+href="'sites_title'">lang</a> = &#39;Sklypai&#39;;</p>
+
+<p>$<a href="'municipality'">lang</a> = &#39;Savivaldybė&#39;; $<a
+href="'area'">lang</a> = &#39;Plotas, m&lt;sup&gt;2&lt;/sup&gt;&#39;; $<a
+href="'rooms'">lang</a> = &#39;Kamb.&#39;; $<a
+href="'rent_and_sale'">lang</a> = &#39;Pardavimas ir nuoma&#39;; $<a
+href="'rent'">lang</a> = &#39;Nuoma&#39;; $<a href="'sale'">lang</a> =
+&#39;Pardavimas&#39;; $<a href="'city'">lang</a> = &#39;Miestas&#39;; $<a
+href="'microblock'">lang</a> = &#39;Mikrorajonas&#39;; $<a
+href="'years'">lang</a> = &#39;Metai&#39;; $<a href="'from'">lang</a> =
+&#39;nuo&#39;; $<a href="'till'">lang</a> = &#39;iki&#39;; $<a
+href="'search'">lang</a> = &#39;Ieškoti&#39;; $<a href="'price'">lang</a> =
+&#39;Kaina&#39;; $<a href="'page_nr'">lang</a> = &#39;Puslapis&#39;;</p>
+
+<p>$<a href="'street'">lang</a> = &#39;Gatvė&#39;; $<a href="'floor'">lang</a>
+= &#39;Aukštas&#39;; $<a href="'main_info'">lang</a> = &#39;Pagrindinė
+informacija&#39;; $<a href="'house_type'">lang</a> = &#39;Namo tipas&#39;;
+$<a href="'heating'">lang</a> = &#39;Šildymas&#39;; $<a
+href="'equipment'">lang</a> = &#39;Įrengimo lygis&#39;; $<a
+href="'square_price'">lang</a> = &#39;1 m&lt;sup&gt;2&lt;/sup&gt;
+kaina&#39;; $<a href="'description'">lang</a> = &#39;Aprašymas&#39;; $<a
+href="'contacts'">lang</a> = &#39;Kontaktai&#39;; $<a
+href="'site_area'">lang</a> = &#39;Sklypo plotas, a&#39;; $<a
+href="'building_year'">lang</a> = &#39;Statybos metai&#39;; $<a
+href="'purpose'">lang</a> = &#39;Paskirtis&#39;; $<a
+href="'building_material'">lang</a> = &#39;Statybos medžiaga&#39;; $<a
+href="'rent_price'">lang</a> = &#39;Nuomos kaina&#39;; $<a
+href="'phone_no'">lang</a> = &#39;Tel. nr.&#39;; $<a
+href="'email'">lang</a> = &#39;El. paštas&#39;; $<a
+href="'extras'">lang</a> = &#39;Ypatumai&#39;; $<a
+href="'no_results'">lang</a>  = &#39;Atsiprašome, neradome objektų.
+Patikslinkite paieškos kriterijus.&#39;; $<a href="'more_info'">lang</a> =
+&#39;Plačiau&#39;; $<a href="'city'">lang</a> = &#39;Miestas&#39;; $<a
+href="'district'">lang</a> = &#39;Mikrorajonas&#39;; $<a
+href="'street'">lang</a> = &#39;Gatvė&#39;; $<a href="'purpose'">lang</a> =
+&#39;Paskirtis&#39;; $<a href="'operation'">lang</a> = &#39;Tikslas&#39;;
+$<a href="'house_area'">lang</a> = &#39;Namo plotas,
+m&lt;sup&gt;2&lt;/sup&gt;&#39;; $<a href="'floor_count'">lang</a> =
+&#39;Aukštų skaičius&#39;; $<a href="'are_price'">lang</a> = &#39;Aro
+kaina&#39;; $<a href="'type'">lang</a> = &#39;Tipas&#39;; $<a
+href="'newest_offers'">lang</a> = &#39;Naujausi objektai&#39;;</p>
+
+<p>$<a href="'roofed_box'">lang</a> = &#39;Neįrengtas/statomas&#39;; ?&gt;</p>
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.2.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

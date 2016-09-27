@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>dezutes.client.php - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script src="../js/jquery.js"></script>
+<script src="../js/darkfish.js"></script>
+
+<link href="../css/fonts.css" rel="stylesheet">
+<link href="../css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../README_rdoc.html">README</a>
+  
+    <li><a href="../php5/dezutes_api_php.html">dezutes.api.php</a>
+  
+    <li><a href="../php5/dezutes_client_php.html">dezutes.client.php</a>
+  
+    <li><a href="../php5/en_php.html">en.php</a>
+  
+    <li><a href="../php5/lt_php.html">lt.php</a>
+  
+    <li><a href="../php5/ru_php.html">ru.php</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page php5/dezutes.client.php">
+
+<p>&lt;?php require_once &#39;dezutes.api.php&#39;;</p>
+
+<p>class DezutesClient extends DezutesAPI {</p>
+
+<pre>function __construct($subdomain, $api_key) {
+  parent::__construct($subdomain, $api_key);
+}
+
+ Metodas skirtas NT objektu sarasui gauti.
+ Per masyva $params perduodam salygos parametrus Dezutems
+ $params[&quot;estate_type&quot;] = &#39;commercial&#39;;
+  &#39;commercial&#39; - komercine patalpos
+  &#39;house&#39; - namai;
+  &#39;flat&#39; - butai;
+  &#39;site&#39; - sklypai;
+ $params[&quot;municipality&quot;] = 461; Integer; Savivaldybes ID;
+ $params[&quot;city&quot;] = 1; Integer; Miesto ID;
+ $params[&quot;block&quot;] = 34; Integer; Mikrorajono ID;
+ $params[&quot;street&quot;] = 2342; Integer; Gatves ID;
+ $params[&quot;project&quot;] = 12; Integer; Projekto ID; Ziur. i
+ $params[&quot;area_from&quot;] = 23.45; Float; Plotas nuo;
+ $params[&quot;area_from&quot;] = 43; Float; Plotas iki;
+ $params[&quot;for_sale&quot;] = 1; Bool/Integer; Operacijos tipas. Pardavimas;
+ $params[&quot;for_rent&quot;] = 1; Bool/Integer; Operacijos tipas. Pardavimas;
+ $params[&quot;status&quot;] = 34; Integer; Objekto eilė. Objektu eiles sudarineja pats klientas: Aktyvus, Rezervuotas, Parduotas ir t.t.
+ $params[&quot;rooms&quot;] = 2; Integer; Kambariu skaicius;
+ $params[&quot;room_count_from&quot;] = 1; Integer; Kambariu skaiciuos nuo;
+ $params[&quot;room_count_from&quot;] = 2; Integer; Kambariu skaiciuos iki;
+
+ $params[&quot;floor_count_from&quot;] = 1; Integer; Pastato aukstu skaicius nuo;
+ $params[&quot;floor_count_till&quot;] = 2; Integer; Pastato aukstu skaicius iki;
+
+ $params[&quot;floor_from&quot;] = 2; Integer; Patalpos/buto aukstas nuo;
+ $params[&quot;floor_till&quot;] = 3; Integer; Patalpos/buto aukstas iki;
+
+ $params[&quot;year_from&quot;] = 1999; Integer; Pastatato statybos metai nuo;
+ $params[&quot;year_till&quot;] = 2004; Integer; Pastatato statybos metai iki;
+
+ $purpose[&#39;purpose&#39;] = array(&#39;purpose_office&#39;) || &#39;&#39;;
+ Komerciniu patalpu atveju Array tipas;
+  purpose_office: Administracinės
+  purpose_manufacture: Gamybinės
+  purpose_store: Sandėliavimo
+  purpose_buisness: Prekybos
+  purpose_food: Maitinimo
+  purpose_building: Pastatas
+  purpose_other: Kitos paskirties
+
+ Sklypu atveju String tipas:
+  commercial: Komercinė
+  agriculture: Žemės ūkio
+  forest: Miškų ūkio
+  residential_skyscraper: Daugiaaukštė gyvenamoji
+  residential: Namų valda
+  manufacturing: Pramonės/sandėliavimo/prekybos
+  recreation: Rekreacinės
+  garden: Sodų
+
+public function getEstates($params = array()){
+  return $this -&gt; sendRequest(&#39;estates&#39;, $params);
+}
+
+/*
+  Metodas grazina konkreciam NT objektui gauti
+ /
+public function getEstate($id = 0, $params = array()){
+  return $this -&gt; sendRequest(&quot;estates/&quot;.$id, $params);
+}
+/*
+  Metodas grazina konkretaus NT objekto nuotraukas
+ /
+public function getEstatePhotos($id = 0, $params = array()){
+  return $this -&gt; sendRequest(&quot;estates/&quot;.$id.&#39;/photos&#39;, $params);
+}
+
+/*
+  Metodas grazina objektu kiekiui gauti, pagal parametrus(ziur. i getEstates metoda)
+ /
+public function getEstatesCount($params = array()){
+  return $this -&gt; sendRequest(&quot;estates_count&quot;, $params);
+}
+/*
+Metodas pagal parametrus grazina visas Savivaldybes. Grazinamos tik tos, kurios turi sarysi su NT objektais
+$params - ziur. i getEstates
+ /
+public function getEstateMunicipalities($params = array()){
+  return $this -&gt; sendRequest(&quot;municipalities&quot;, $params);
+}
+/*
+ Metodas pagal parametrus grazina visus Miestus. Grazinamos tik tie, kurie turi sarysi su NT objektais
+ $params - ziur. i getEstates
+  /
+public function getEstateCities($params = array()){
+  return $this -&gt; sendRequest(&quot;cities&quot;, $params);
+}
+/*
+ Metodas pagal parametrus grazina visus MikroRajonus. Grazinamos tik tie, kurie turi sarysi su NT objektais
+ $params - ziur. i getEstates
+  /
+public function getEstateBlocks($params = array()){
+  return $this -&gt; sendRequest(&quot;blocks&quot;, $params);
+}
+
+# NT objektų statusai
+public function getEstateStatuses(){
+  return $this -&gt; sendRequest(&quot;estate_statuses&quot;);
+}
+
+# NT objektų nuotraukų versijų sąrašas
+public function getEstatePhotoVersions(){
+   return $this -&gt; sendRequest(&quot;estate_photo_versions&quot;);
+ }
+
+/*
+ Metodas grazina projektus.
+  /
+public function getProjects($params = array()){
+  return $this -&gt; sendRequest(&quot;projects&quot;, $params);
+}
+/*
+ Metodas grazina konkretu projekta.
+  /
+public function getProject($id = 0, $params = array()){
+  return $this -&gt; sendRequest(&quot;projects/&quot;.$id, $params);
+}
+/*
+  Metodas grazina konkretaus projekto nuotraukas.
+ /
+public function getProjectPhotos($id = 0, $params = array()){
+  return $this -&gt; sendRequest(&quot;projects/&quot;.$id.&#39;/photos&#39;, $params);
+}
+/*
+  Metodas grazina konkreciam projektui priskirtus NT objektus.
+ /
+public function getProjectEstates($id = 0, $params = array()){
+  return $this -&gt; sendRequest(&quot;projects/&quot;.$id.&#39;/estates&#39;, $params);
+}
+
+# NT projektų nuotraukų versijų sąrašas
+ public function getProjectsPhotoVersions(){
+    return $this -&gt; sendRequest(&quot;project_photo_versions&quot;);
+}
+/*
+  Metodas grazina projektu kieki, pagal parametrus(ziur. i getProjects metoda)
+ /
+public function getProjectCount($params = array()){
+  return $this -&gt; sendRequest(&quot;projects_count&quot;, $params);
+}
+#Brokerio informacija
+public function getBroker($id = 0, $params = array()){
+   return $this -&gt; sendRequest(&quot;brokers/&quot;.$id, $params);
+ }
+
+#Brokerių sąrašas
+public function getBrokers($params = array()){
+  return $this -&gt; sendRequest(&quot;brokers&quot;, $params);
+}
+
+#Ofisų sąrašas
+public function getOffices($params = array()){
+  return $this -&gt; sendRequest(&quot;offices&quot;, $params);
+}</pre>
+
+<p>}</p>
+
+<p>?&gt;</p>
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.2.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+
