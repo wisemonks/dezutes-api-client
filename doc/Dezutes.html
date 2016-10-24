@@ -239,7 +239,7 @@ raktas(md5 string), sugeneruotas Dezutes.lt sistemos.</p>
 
           
           <div class="method-source-code" id="get_broker-source">
-            <pre><span class="ruby-comment"># File ruby/dezutes.rb, line 299</span>
+            <pre><span class="ruby-comment"># File ruby/dezutes.rb, line 423</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">get_broker</span>(<span class="ruby-identifier">id</span>)
   <span class="ruby-identifier">send_request</span>(<span class="ruby-node">&quot;/brokers/#{id}&quot;</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -291,7 +291,7 @@ raktas(md5 string), sugeneruotas Dezutes.lt sistemos.</p>
 
           
           <div class="method-source-code" id="get_brokers-source">
-            <pre><span class="ruby-comment"># File ruby/dezutes.rb, line 294</span>
+            <pre><span class="ruby-comment"># File ruby/dezutes.rb, line 418</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">get_brokers</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
   <span class="ruby-identifier">send_request</span>(<span class="ruby-string">&quot;/brokers&quot;</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -337,7 +337,7 @@ href="Dezutes.html#method-i-get_estate_photo_versions">#get_estate_photo_version
 
           
           <div class="method-source-code" id="get_estate-source">
-            <pre><span class="ruby-comment"># File ruby/dezutes.rb, line 133</span>
+            <pre><span class="ruby-comment"># File ruby/dezutes.rb, line 257</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">get_estate</span>(<span class="ruby-identifier">id</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
   <span class="ruby-identifier">send_request</span>(<span class="ruby-node">&quot;/estate/#{id}&quot;</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -382,7 +382,7 @@ href="Dezutes.html#method-i-get_estates">#get_estates</a> metodo parametrus</p>
 
           
           <div class="method-source-code" id="get_estate_blocks-source">
-            <pre><span class="ruby-comment"># File ruby/dezutes.rb, line 198</span>
+            <pre><span class="ruby-comment"># File ruby/dezutes.rb, line 322</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">get_estate_blocks</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
   <span class="ruby-identifier">send_request</span>(<span class="ruby-string">&quot;/blocks&quot;</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -427,7 +427,7 @@ href="Dezutes.html#method-i-get_estates">#get_estates</a> metodo parametrus</p>
 
           
           <div class="method-source-code" id="get_estate_cities-source">
-            <pre><span class="ruby-comment"># File ruby/dezutes.rb, line 184</span>
+            <pre><span class="ruby-comment"># File ruby/dezutes.rb, line 308</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">get_estate_cities</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
   <span class="ruby-identifier">send_request</span>(<span class="ruby-string">&quot;/cities&quot;</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -469,7 +469,7 @@ metode <a href="Dezutes.html#method-i-get_estates">#get_estates</a></p>
 
           
           <div class="method-source-code" id="get_estate_count-source">
-            <pre><span class="ruby-comment"># File ruby/dezutes.rb, line 156</span>
+            <pre><span class="ruby-comment"># File ruby/dezutes.rb, line 280</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">get_estate_count</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
   <span class="ruby-identifier">send_request</span>(<span class="ruby-string">&quot;/estates_count&quot;</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -514,7 +514,7 @@ href="Dezutes.html#method-i-get_estates">#get_estates</a> metodo parametrus</p>
 
           
           <div class="method-source-code" id="get_estate_municipalities-source">
-            <pre><span class="ruby-comment"># File ruby/dezutes.rb, line 170</span>
+            <pre><span class="ruby-comment"># File ruby/dezutes.rb, line 294</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">get_estate_municipalities</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
   <span class="ruby-identifier">send_request</span>(<span class="ruby-string">&quot;/municipalities&quot;</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -547,7 +547,7 @@ href="Dezutes.html#method-i-get_estates">#get_estates</a> metodo parametrus</p>
 
           
           <div class="method-source-code" id="get_estate_photo_versions-source">
-            <pre><span class="ruby-comment"># File ruby/dezutes.rb, line 264</span>
+            <pre><span class="ruby-comment"># File ruby/dezutes.rb, line 388</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">get_estate_photo_versions</span>
   <span class="ruby-identifier">send_request</span>(<span class="ruby-string">&quot;/estate_photo_versions&quot;</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -594,7 +594,7 @@ href="Dezutes.html#method-i-get_estate_photo_versions">#get_estate_photo_version
 
           
           <div class="method-source-code" id="get_estate_photos-source">
-            <pre><span class="ruby-comment"># File ruby/dezutes.rb, line 145</span>
+            <pre><span class="ruby-comment"># File ruby/dezutes.rb, line 269</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">get_estate_photos</span>(<span class="ruby-identifier">id</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
   <span class="ruby-identifier">send_request</span>(<span class="ruby-node">&quot;/estates/#{id}/photos&quot;</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>);
 <span class="ruby-keyword">end</span></pre>
@@ -627,7 +627,7 @@ href="Dezutes.html#method-i-get_estate_photo_versions">#get_estate_photo_version
 
           
           <div class="method-source-code" id="get_estate_statuses-source">
-            <pre><span class="ruby-comment"># File ruby/dezutes.rb, line 259</span>
+            <pre><span class="ruby-comment"># File ruby/dezutes.rb, line 383</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">get_estate_statuses</span>
   <span class="ruby-identifier">send_request</span>(<span class="ruby-string">&quot;/estate_statuses&quot;</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -758,6 +758,321 @@ no_project=1</p>
 ilgumai, platumai.</p>
 </li></ul>
 
+<h4 id="method-i-get_estates-label-Buto+specifiniai+atributai-3A">Buto specifiniai atributai:<span><a href="#method-i-get_estates-label-Buto+specifiniai+atributai-3A">&para;</a> <a href="#top">&uarr;</a></span></h4>
+<ul><li>
+<p>flat_has_high_ceiling | type:boolean | Aukštos lubos |
+flat_has_high_ceiling=1</p>
+</li><li>
+<p>flat_has_balcony | type:boolean | Balkonas | flat_has_balcony=1</p>
+</li><li>
+<p>flat_has_kitchen | type:boolean | Buitinė technika | flat_has_kitchen=1</p>
+</li><li>
+<p>flat_has_with_second_floor | type:boolean | Butas per kelis aukštus |
+flat_has_with_second_floor=1</p>
+</li><li>
+<p>flat_has_detail_plan | type:boolean | Detalus planas |
+flat_has_detail_plan=1</p>
+</li><li>
+<p>flat_has_internet | type:boolean | Internetas | flat_has_internet=1</p>
+</li><li>
+<p>flat_has_cable_tv | type:boolean | Kabelinė televizija |
+flat_has_cable_tv=1</p>
+</li><li>
+<p>flat_has_keylocked_stairway | type:boolean | Kodinė laiptinės spyna |
+flat_has_keylocked_stairway=1</p>
+</li><li>
+<p>flat_has_conditioning | type:boolean | Kondicionierius |
+flat_has_conditioning=1</p>
+</li><li>
+<p>flat_has_packet_windows | type:boolean | Langai su stiklo paketais |
+flat_has_packet_windows=1</p>
+</li><li>
+<p>flat_has_lift | type:boolean | Liftas | flat_has_lift=1</p>
+</li><li>
+<p>flat_has_parquet | type:boolean | Parketas | flat_has_parquet=1</p>
+</li><li>
+<p>flat_has_dressing_room | type:boolean | Rūbinė | flat_has_dressing_room=1</p>
+</li><li>
+<p>flat_has_basement | type:boolean | Rūsys | flat_has_basement=1</p>
+</li><li>
+<p>flat_has_lumber_room | type:boolean | Sandėliukas | flat_has_lumber_room=1</p>
+</li><li>
+<p>flat_has_alarm | type:boolean | Signalizacija | flat_has_alarm=1</p>
+</li><li>
+<p>flat_has_wahing_machine | type:boolean | Skalbimo mašina |
+flat_has_wahing_machine=1</p>
+</li><li>
+<p>flat_has_furniture | type:boolean | Su baldais | flat_has_furniture=1</p>
+</li><li>
+<p>flat_has_phone | type:boolean | Telefono linija | flat_has_phone=1</p>
+</li><li>
+<p>flat_has_tv | type:boolean | Televizorius | flat_has_tv=1</p>
+</li><li>
+<p>flat_has_terrace | type:boolean | Terasa | flat_has_terrace=1</p>
+</li><li>
+<p>flat_has_wc_bath_separate | type:boolean | Tualetas ir vonia atskirai |
+flat_has_wc_bath_separate=1</p>
+</li><li>
+<p>flat_has_parking_place | type:boolean | Vieta automobiliui |
+flat_has_parking_place=1</p>
+</li><li>
+<p>flat_has_open_kitchen | type:boolean | Virtuvė sujungta su kamb. |
+flat_has_open_kitchen=1</p>
+</li><li>
+<p>flat_has_bath | type:boolean | Vonia | flat_has_bath=1</p>
+</li><li>
+<p>flat_has_refridgerator | type:boolean | Šaldytuvas |
+flat_has_refridgerator=1</p>
+</li><li>
+<p>flat_has_armed_doors | type:boolean | Šarvuotos durys |
+flat_has_armed_doors=1</p>
+</li><li>
+<p>flat_has_fireside | type:boolean | Židinys | flat_has_fireside=1</p>
+</li><li>
+<p>flat_heating | type:Array | Šildymas | <a
+href="">flat_heating[]=central&flat_heating</a>=electric | Galimos
+reikšmės:</p>
+<ul><li>
+<p>central | Centrinis</p>
+</li><li>
+<p>city | Centrinis-kolektorinis</p>
+</li><li>
+<p>gas | Dujinis</p>
+</li><li>
+<p>electric | Elektrinis</p>
+</li><li>
+<p>solid_fuel | Kietu kuru</p>
+</li><li>
+<p>geo | Geoterminis</p>
+</li></ul>
+</li><li>
+<p>flat_equipment | type:Array | Įrengimas | <a
+href="">flat_equipment[]=full&flat_equipment</a>=part | Galimos reikšmės:</p>
+<ul><li>
+<p>full | Visa apdaila</p>
+</li><li>
+<p>part | Dalinė apdaila</p>
+</li><li>
+<p>partial_repairs | Suremontuotas</p>
+</li><li>
+<p>good | Tvarkingas</p>
+</li><li>
+<p>need_repairs | Remontuotinas</p>
+</li><li>
+<p>other | Kita</p>
+</li></ul>
+</li></ul>
+
+<h4 id="method-i-get_estates-label-Namo+specifiniai+atributai-3A">Namo specifiniai atributai:<span><a href="#method-i-get_estates-label-Namo+specifiniai+atributai-3A">&para;</a> <a href="#top">&uarr;</a></span></h4>
+<ul><li>
+<p>house_has_water_pool | type:boolean | Baseinas | house_has_water_pool=1</p>
+</li><li>
+<p>house_has_boiler | type:boolean | Boileris | house_has_boiler=1</p>
+</li><li>
+<p>house_has_kitchen | type:boolean | Buitinė technika | house_has_kitchen=1</p>
+</li><li>
+<p>house_has_detail_plan | type:boolean | Detalus planas |
+house_has_detail_plan=1</p>
+</li><li>
+<p>house_has_gas | type:boolean | Dujos | house_has_gas=1</p>
+</li><li>
+<p>house_has_shower | type:boolean | Dušas | house_has_shower=1</p>
+</li><li>
+<p>house_has_electricity | type:boolean | Elektra | house_has_electricity=1</p>
+</li><li>
+<p>house_has_electricity_380V | type:boolean | Elektra 3x380V |
+house_has_electricity_380V=1</p>
+</li><li>
+<p>house_has_good_access | type:boolean | Geras privažiavimas |
+house_has_good_access=1</p>
+</li><li>
+<p>house_has_internet | type:boolean | Internetas | house_has_internet=1</p>
+</li><li>
+<p>house_has_cable_tv | type:boolean | Kabelinė televizija |
+house_has_cable_tv=1</p>
+</li><li>
+<p>house_has_conditioning | type:boolean | Kondicionierius |
+house_has_conditioning=1</p>
+</li><li>
+<p>house_has_packet_windows | type:boolean | Langai su stiklo paketais |
+house_has_packet_windows=1</p>
+</li><li>
+<p>house_has_outdoor_terrace | type:boolean | Lauko terasa |
+house_has_outdoor_terrace=1</p>
+</li><li>
+<p>house_has_lift | type:boolean | Liftas | house_has_lift=1</p>
+</li><li>
+<p>house_has_city_plumbing | type:boolean | Miesto kanalizacija |
+house_has_city_plumbing=1</p>
+</li><li>
+<p>house_has_parquet | type:boolean | Parketas | house_has_parquet=1</p>
+</li><li>
+<p>house_has_bathhouse | type:boolean | Pirtis | house_has_bathhouse=1</p>
+</li><li>
+<p>house_has_dressing_room | type:boolean | Rūbinė | house_has_dressing_room=1</p>
+</li><li>
+<p>house_has_basement | type:boolean | Rūsys | house_has_basement=1</p>
+</li><li>
+<p>house_has_alarm | type:boolean | Signalizacija | house_has_alarm=1</p>
+</li><li>
+<p>house_has_wahing_machine | type:boolean | Skalbimo mašina |
+house_has_wahing_machine=1</p>
+</li><li>
+<p>house_has_furniture | type:boolean | Su baldais | house_has_furniture=1</p>
+</li><li>
+<p>house_has_phone | type:boolean | Telefono linija | house_has_phone=1</p>
+</li><li>
+<p>house_has_tv | type:boolean | Televizorius | house_has_tv=1</p>
+</li><li>
+<p>house_has_wc_bath_separate | type:boolean | Tualetas ir vonia atskirai |
+house_has_wc_bath_separate=1</p>
+</li><li>
+<p>house_has_water | type:boolean | Vandentiekis | house_has_water=1</p>
+</li><li>
+<p>house_has_local_plumbing | type:boolean | Vietinė kanalizacija |
+house_has_local_plumbing=1</p>
+</li><li>
+<p>house_has_open_kitchen | type:boolean | Virtuvė sujungta su kamb. |
+house_has_open_kitchen=1</p>
+</li><li>
+<p>house_has_bath | type:boolean | Vonia | house_has_bath=1</p>
+</li><li>
+<p>house_has_wavin_pipes | type:boolean | Wavin vamzdžiai |
+house_has_wavin_pipes=1</p>
+</li><li>
+<p>house_has_refridgerator | type:boolean | Šaldytuvas |
+house_has_refridgerator=1</p>
+</li><li>
+<p>house_has_near_water | type:boolean | Šalia vandens tvenkinio |
+house_has_near_water=1</p>
+</li><li>
+<p>house_has_armed_doors | type:boolean | Šarvuotos durys |
+house_has_armed_doors=1</p>
+</li><li>
+<p>house_has_fireside | type:boolean | Židinys |
+house_has_fireside=1med_doors=1</p>
+</li><li>
+<p>house_has_fireside | type:boolean | Židinys | flat_has_fireside=1</p>
+</li><li>
+<p>house_heating | type:Array | Šildymas | <a
+href="">house_heating[]=central&flat_heating</a>=electric | Galimos
+reikšmės:</p>
+<ul><li>
+<p>central | Centrinis</p>
+</li><li>
+<p>gas |Dujinis</p>
+</li><li>
+<p>electric | Elektrinis</p>
+</li><li>
+<p>solid_fuel | Kietu kuru</p>
+</li><li>
+<p>liquid_fuel | Skystu kuru</p>
+</li><li>
+<p>geo | Geoterminis</p>
+</li><li>
+<p>other | Kita</p>
+</li></ul>
+</li><li>
+<p>house_equipment | type:Array | Įrengimas | <a
+href="">house_equipment[]=full&house_equipment</a>=part | Galimos reikšmės:</p>
+<ul><li>
+<p>full | Pilnai įrengtas</p>
+</li><li>
+<p>part | Dalinė apdaila</p>
+</li><li>
+<p>roofed_box | Neįrengtas/Statomas</p>
+</li><li>
+<p>other | Kita</p>
+</li></ul>
+</li></ul>
+
+<h4 id="method-i-get_estates-label-Komercini-C5-B3+patalp-C5-B3+specifiniai+atributai-3A">Komercinių patalpų specifiniai atributai:<span><a href="#method-i-get_estates-label-Komercini-C5-B3+patalp-C5-B3+specifiniai+atributai-3A">&para;</a> <a href="#top">&uarr;</a></span></h4>
+<ul><li>
+<p>commercial_has_security | type:boolean | Apsauga |
+commercial_has_security=1</p>
+</li><li>
+<p>commercial_has_separate_entryway | type:boolean | Atskiras įėjimas |
+commercial_has_separate_entryway=1</p>
+</li><li>
+<p>commercial_has_balcony | type:boolean | Balkonas | commercial_has_balcony=1</p>
+</li><li>
+<p>commercial_has_kitchen | type:boolean | Buitinė technika |
+commercial_has_kitchen=1</p>
+</li><li>
+<p>commercial_has_detail_plan | type:boolean | Detalus planas |
+commercial_has_detail_plan=1</p>
+</li><li>
+<p>commercial_has_gas | type:boolean | Dujos | commercial_has_gas=1</p>
+</li><li>
+<p>commercial_has_shower | type:boolean | Dušas | commercial_has_shower=1</p>
+</li><li>
+<p>commercial_has_electricity | type:boolean | Elektra |
+commercial_has_electricity=1</p>
+</li><li>
+<p>commercial_has_good_access | type:boolean | Geras privažiavimas |
+commercial_has_good_access=1</p>
+</li><li>
+<p>commercial_has_internet | type:boolean | Internetas |
+commercial_has_internet=1</p>
+</li><li>
+<p>commercial_has_conference_hall | type:boolean | Konferencijų salė pastate |
+commercial_has_conference_hall=1</p>
+</li><li>
+<p>commercial_has_cargo_elevator | type:boolean | Krovininis liftas |
+commercial_has_cargo_elevator=1</p>
+</li><li>
+<p>commercial_has_lift | type:boolean | Liftas | commercial_has_lift=1</p>
+</li><li>
+<p>commercial_has_local_feeding | type:boolean | Maitinimo įstaiga pastate |
+commercial_has_local_feeding=1</p>
+</li><li>
+<p>commercial_has_room_conditioning | type:boolean | Patalpų kondicionavimas |
+commercial_has_room_conditioning=1</p>
+</li><li>
+<p>commercial_has_alarm | type:boolean | Signalizacija |
+commercial_has_alarm=1</p>
+</li><li>
+<p>commercial_has_furniture | type:boolean | Su baldais |
+commercial_has_furniture=1</p>
+</li><li>
+<p>commercial_has_phone | type:boolean | Telefono linija |
+commercial_has_phone=1</p>
+</li><li>
+<p>commercial_has_water | type:boolean | Vandentiekis | commercial_has_water=1</p>
+</li><li>
+<p>commercial_heating | type:Array | Šildymas | <a
+href="">commercial_heating[]=central&commercial_heating</a>=electric |
+Galimos reikšmės:</p>
+<ul><li>
+<p>central | Centrinis</p>
+</li><li>
+<p>city | Miesto</p>
+</li><li>
+<p>gas |Dujinis</p>
+</li><li>
+<p>electric | Elektrinis</p>
+</li><li>
+<p>solid_fuel | Kietu kuru</p>
+</li><li>
+<p>liquid_fuel | Skystu kuru</p>
+</li><li>
+<p>geo | Geoterminis</p>
+</li><li>
+<p>other | Kita</p>
+</li></ul>
+</li><li>
+<p>commercial_equipment | type:Array | Įrengimas | <a
+href="">commercial_equipment[]=full&commercial_equipment</a>=part | Galimos
+reikšmės:</p>
+<ul><li>
+<p>full | Pilnai įrengtas</p>
+</li><li>
+<p>part | Dalinė apdaila</p>
+</li><li>
+<p>no_equipment | Neįrengtas</p>
+</li></ul>
+</li></ul>
+
 <h4 id="method-i-get_estates-label-Duomen-C5-B3+ribojimo-2C+puslapiavimo+parametrai-3A">Duomenų ribojimo, puslapiavimo parametrai:<span><a href="#method-i-get_estates-label-Duomen-C5-B3+ribojimo-2C+puslapiavimo+parametrai-3A">&para;</a> <a href="#top">&uarr;</a></span></h4>
 <ul><li>
 <p>per_page | type:integer, max=250 | Grąžinamų NT objektų kiekis.</p>
@@ -829,7 +1144,7 @@ get_estates(:estate_type =&gt; &#39;commercial&#39;, :for_rent =&gt; 1, :per_pag
 
           
           <div class="method-source-code" id="get_estates-source">
-            <pre><span class="ruby-comment"># File ruby/dezutes.rb, line 122</span>
+            <pre><span class="ruby-comment"># File ruby/dezutes.rb, line 246</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">get_estates</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
   <span class="ruby-identifier">send_request</span>(<span class="ruby-string">&quot;/estates&quot;</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -862,7 +1177,7 @@ get_estates(:estate_type =&gt; &#39;commercial&#39;, :for_rent =&gt; 1, :per_pag
 
           
           <div class="method-source-code" id="get_offices-source">
-            <pre><span class="ruby-comment"># File ruby/dezutes.rb, line 304</span>
+            <pre><span class="ruby-comment"># File ruby/dezutes.rb, line 428</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">get_offices</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
   <span class="ruby-identifier">send_request</span>(<span class="ruby-string">&quot;/offices&quot;</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -908,7 +1223,7 @@ href="Dezutes.html#method-i-get_estate_photo_versions">#get_estate_photo_version
 
           
           <div class="method-source-code" id="get_project-source">
-            <pre><span class="ruby-comment"># File ruby/dezutes.rb, line 231</span>
+            <pre><span class="ruby-comment"># File ruby/dezutes.rb, line 355</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">get_project</span>(<span class="ruby-identifier">id</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
   <span class="ruby-identifier">send_request</span>(<span class="ruby-node">&quot;/projects/#{id}&quot;</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -950,7 +1265,7 @@ metode <a href="Dezutes.html#method-i-get_projects">#get_projects</a></p>
 
           
           <div class="method-source-code" id="get_project_count-source">
-            <pre><span class="ruby-comment"># File ruby/dezutes.rb, line 279</span>
+            <pre><span class="ruby-comment"># File ruby/dezutes.rb, line 403</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">get_project_count</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
   <span class="ruby-identifier">send_request</span>(<span class="ruby-string">&quot;/projects_count&quot;</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -992,7 +1307,7 @@ href="Dezutes.html#method-i-get_estates">#get_estates</a> metodo parametrus</p>
 
           
           <div class="method-source-code" id="get_project_estates-source">
-            <pre><span class="ruby-comment"># File ruby/dezutes.rb, line 254</span>
+            <pre><span class="ruby-comment"># File ruby/dezutes.rb, line 378</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">get_project_estates</span>(<span class="ruby-identifier">id</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
   <span class="ruby-identifier">send_request</span>(<span class="ruby-node">&quot;/projects/#{id}/estates&quot;</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -1025,7 +1340,7 @@ href="Dezutes.html#method-i-get_estates">#get_estates</a> metodo parametrus</p>
 
           
           <div class="method-source-code" id="get_project_photo_versions-source">
-            <pre><span class="ruby-comment"># File ruby/dezutes.rb, line 268</span>
+            <pre><span class="ruby-comment"># File ruby/dezutes.rb, line 392</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">get_project_photo_versions</span>
   <span class="ruby-identifier">send_request</span>(<span class="ruby-string">&quot;/project_photo_versions&quot;</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -1070,7 +1385,7 @@ href="Dezutes.html#method-i-get_project_photo_versions">#get_project_photo_versi
 
           
           <div class="method-source-code" id="get_project_photos-source">
-            <pre><span class="ruby-comment"># File ruby/dezutes.rb, line 242</span>
+            <pre><span class="ruby-comment"># File ruby/dezutes.rb, line 366</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">get_project_photos</span>(<span class="ruby-identifier">id</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
   <span class="ruby-identifier">send_request</span>(<span class="ruby-node">&quot;/projects/#{id}/photos&quot;</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -1125,7 +1440,7 @@ perduodamus parametrus.</p>
 
           
           <div class="method-source-code" id="get_projects-source">
-            <pre><span class="ruby-comment"># File ruby/dezutes.rb, line 219</span>
+            <pre><span class="ruby-comment"># File ruby/dezutes.rb, line 343</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">get_projects</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
   <span class="ruby-identifier">send_request</span>(<span class="ruby-string">&quot;/projects&quot;</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -1166,7 +1481,7 @@ perduodamus parametrus.</p>
 
           
           <div class="method-source-code" id="send_request-source">
-            <pre><span class="ruby-comment"># File ruby/dezutes.rb, line 309</span>
+            <pre><span class="ruby-comment"># File ruby/dezutes.rb, line 433</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">send_request</span>(<span class="ruby-identifier">resource_location</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
   <span class="ruby-identifier">response_type</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Symbol</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">shift</span> <span class="ruby-operator">:</span> <span class="ruby-value">:xml</span>
   <span class="ruby-identifier">options</span> = (<span class="ruby-identifier">args</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">pop</span> <span class="ruby-operator">:</span> {}).<span class="ruby-identifier">merge!</span>(

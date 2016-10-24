@@ -117,7 +117,7 @@ class Dezutes
   #   - electric | Elektrinis
   #   - solid_fuel | Kietu kuru
   #   - geo | Geoterminis
-  # - flat_equipment | type:Array | Įrengimas | flat_equipment[]=full&flat_equipment[]=part | Galimos reikšmės:
+  # - flat_equipment | type:Array | Įrengimas | flat_equipment[]=full | Galimos reikšmės:
   #   - full | Visa apdaila
   #   - part | Dalinė apdaila
   #   - partial_repairs | Suremontuotas
@@ -161,7 +161,7 @@ class Dezutes
   # - house_has_armed_doors | type:boolean | Šarvuotos durys | house_has_armed_doors=1
   # - house_has_fireside | type:boolean | Židinys | house_has_fireside=1med_doors=1
   # - house_has_fireside | type:boolean | Židinys | flat_has_fireside=1
-  # - house_heating | type:Array | Šildymas | house_heating[]=central&flat_heating[]=electric | Galimos reikšmės:
+  # - house_heating | type:Array | Šildymas | house_heating[]=central | Galimos reikšmės:
   #   - central | Centrinis
   #   - gas |Dujinis
   #   - electric | Elektrinis
@@ -169,7 +169,7 @@ class Dezutes
   #   - liquid_fuel | Skystu kuru
   #   - geo | Geoterminis
   #   - other | Kita
-  # - house_equipment | type:Array | Įrengimas | house_equipment[]=full&house_equipment[]=part | Galimos reikšmės:
+  # - house_equipment | type:Array | Įrengimas | house_equipment[]=full | Galimos reikšmės:
   #   - full | Pilnai įrengtas
   #   - part | Dalinė apdaila
   #   - roofed_box | Neįrengtas/Statomas
@@ -194,7 +194,7 @@ class Dezutes
   # - commercial_has_furniture | type:boolean | Su baldais | commercial_has_furniture=1
   # - commercial_has_phone | type:boolean | Telefono linija | commercial_has_phone=1
   # - commercial_has_water | type:boolean | Vandentiekis | commercial_has_water=1
-  # - commercial_heating | type:Array | Šildymas | commercial_heating[]=central&commercial_heating[]=electric | Galimos reikšmės:
+  # - commercial_heating | type:Array | Šildymas | commercial_heating[]=central| Galimos reikšmės:
   #   - central | Centrinis
   #   - city | Miesto
   #   - gas |Dujinis
@@ -203,7 +203,7 @@ class Dezutes
   #   - liquid_fuel | Skystu kuru
   #   - geo | Geoterminis
   #   - other | Kita
-  # - commercial_equipment | type:Array | Įrengimas | commercial_equipment[]=full&commercial_equipment[]=part | Galimos reikšmės:
+  # - commercial_equipment | type:Array | Įrengimas | commercial_equipment[]=full | Galimos reikšmės:
   #   - full | Pilnai įrengtas
   #   - part | Dalinė apdaila
   #   - no_equipment | Neįrengtas
@@ -332,9 +332,15 @@ class Dezutes
   # - is_investment | type:boolean(integer: 0 || 1) | Investiciniai projektai
   # - is_living | type:boolean(integer: 0 || 1) | Gyvenamajieji projektai
   # - is_commercial | type:boolean(integer: 0 || 1) | Komerciniai projektai
-  #
-  #  Projektas gali buti ir investicinis, ir komercinis, ir gyvenamasis
-  #
+  # - is_logistic | type:boolean(integer: 0 || 1) | Logistikos projektai
+  # - has_flat | type:boolean(integer: 0 || 1) | Rodyti prie projekto priskirtus butus
+  # - has_house | type:boolean(integer: 0 || 1) | Rodyti prie projekto priskirtus namus
+  # - has_site | type:boolean(integer: 0 || 1) | Rodyti prie projekto priskirtus sklypus
+  # - has_commercial | type:boolean(integer: 0 || 1) | Rodyti prie projekto priskirtus kom. patalpas
+  # - area_from | type:float | NT projekto plotas nuo
+  # - area_till | type:float | NT projekto plotas iki  
+  # - price_from | type:float | NT projekto kaina nuo
+  # - price_till | type:float | NT projekto kaina iki
   # ==== Užklausos pvz:
   #
   #     #Visi Vilniaus miesto Investiciniai Komerciniai projektai
