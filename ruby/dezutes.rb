@@ -81,8 +81,132 @@ class Dezutes
   # - latitude | type:float | Paieška pagal platumą. Naudoti kartu su longitude
   # - longitude | type:float | Paieška pagal ilgumą. Naudoti kartu su latitude
   # - radius | type:integer | default=1 | Paieškos spindulio (km) parametras ilgumai, platumai. 
-  #
-  #
+  # ==== Buto specifiniai atributai:
+  # - flat_has_high_ceiling | type:boolean | Aukštos lubos | flat_has_high_ceiling=1
+  # - flat_has_balcony | type:boolean | Balkonas | flat_has_balcony=1
+  # - flat_has_kitchen | type:boolean | Buitinė technika | flat_has_kitchen=1
+  # - flat_has_with_second_floor | type:boolean | Butas per kelis aukštus | flat_has_with_second_floor=1
+  # - flat_has_detail_plan | type:boolean | Detalus planas | flat_has_detail_plan=1
+  # - flat_has_internet | type:boolean | Internetas | flat_has_internet=1
+  # - flat_has_cable_tv | type:boolean | Kabelinė televizija | flat_has_cable_tv=1
+  # - flat_has_keylocked_stairway | type:boolean | Kodinė laiptinės spyna | flat_has_keylocked_stairway=1
+  # - flat_has_conditioning | type:boolean | Kondicionierius | flat_has_conditioning=1
+  # - flat_has_packet_windows | type:boolean | Langai su stiklo paketais | flat_has_packet_windows=1
+  # - flat_has_lift | type:boolean | Liftas | flat_has_lift=1
+  # - flat_has_parquet | type:boolean | Parketas | flat_has_parquet=1
+  # - flat_has_dressing_room | type:boolean | Rūbinė | flat_has_dressing_room=1
+  # - flat_has_basement | type:boolean | Rūsys | flat_has_basement=1
+  # - flat_has_lumber_room | type:boolean | Sandėliukas | flat_has_lumber_room=1
+  # - flat_has_alarm | type:boolean | Signalizacija | flat_has_alarm=1
+  # - flat_has_wahing_machine | type:boolean | Skalbimo mašina | flat_has_wahing_machine=1
+  # - flat_has_furniture | type:boolean | Su baldais | flat_has_furniture=1
+  # - flat_has_phone | type:boolean | Telefono linija | flat_has_phone=1
+  # - flat_has_tv | type:boolean | Televizorius | flat_has_tv=1
+  # - flat_has_terrace | type:boolean | Terasa | flat_has_terrace=1
+  # - flat_has_wc_bath_separate | type:boolean | Tualetas ir vonia atskirai | flat_has_wc_bath_separate=1
+  # - flat_has_parking_place | type:boolean | Vieta automobiliui | flat_has_parking_place=1
+  # - flat_has_open_kitchen | type:boolean | Virtuvė sujungta su kamb. | flat_has_open_kitchen=1
+  # - flat_has_bath | type:boolean | Vonia | flat_has_bath=1
+  # - flat_has_refridgerator | type:boolean | Šaldytuvas | flat_has_refridgerator=1
+  # - flat_has_armed_doors | type:boolean | Šarvuotos durys | flat_has_armed_doors=1
+  # - flat_has_fireside | type:boolean | Židinys | flat_has_fireside=1
+  # - flat_heating | type:Array | Šildymas | flat_heating[]=central&flat_heating[]=electric | Galimos reikšmės:
+  #   - central | Centrinis
+  #   - city | Centrinis-kolektorinis
+  #   - gas | Dujinis
+  #   - electric | Elektrinis
+  #   - solid_fuel | Kietu kuru
+  #   - geo | Geoterminis
+  # - flat_equipment | type:Array | Įrengimas | flat_equipment[]=full&flat_equipment[]=part | Galimos reikšmės:
+  #   - full | Visa apdaila
+  #   - part | Dalinė apdaila
+  #   - partial_repairs | Suremontuotas
+  #   - good | Tvarkingas
+  #   - need_repairs | Remontuotinas
+  #   - other | Kita
+  # ==== Namo specifiniai atributai:
+  # - house_has_water_pool | type:boolean | Baseinas | house_has_water_pool=1
+  # - house_has_boiler | type:boolean | Boileris | house_has_boiler=1
+  # - house_has_kitchen | type:boolean | Buitinė technika | house_has_kitchen=1
+  # - house_has_detail_plan | type:boolean | Detalus planas | house_has_detail_plan=1
+  # - house_has_gas | type:boolean | Dujos | house_has_gas=1
+  # - house_has_shower | type:boolean | Dušas | house_has_shower=1
+  # - house_has_electricity | type:boolean | Elektra | house_has_electricity=1
+  # - house_has_electricity_380V | type:boolean | Elektra 3x380V | house_has_electricity_380V=1
+  # - house_has_good_access | type:boolean | Geras privažiavimas | house_has_good_access=1
+  # - house_has_internet | type:boolean | Internetas | house_has_internet=1
+  # - house_has_cable_tv | type:boolean | Kabelinė televizija | house_has_cable_tv=1
+  # - house_has_conditioning | type:boolean | Kondicionierius | house_has_conditioning=1
+  # - house_has_packet_windows | type:boolean | Langai su stiklo paketais | house_has_packet_windows=1
+  # - house_has_outdoor_terrace | type:boolean | Lauko terasa | house_has_outdoor_terrace=1
+  # - house_has_lift | type:boolean | Liftas | house_has_lift=1
+  # - house_has_city_plumbing | type:boolean | Miesto kanalizacija | house_has_city_plumbing=1
+  # - house_has_parquet | type:boolean | Parketas | house_has_parquet=1
+  # - house_has_bathhouse | type:boolean | Pirtis | house_has_bathhouse=1
+  # - house_has_dressing_room | type:boolean | Rūbinė | house_has_dressing_room=1
+  # - house_has_basement | type:boolean | Rūsys | house_has_basement=1
+  # - house_has_alarm | type:boolean | Signalizacija | house_has_alarm=1
+  # - house_has_wahing_machine | type:boolean | Skalbimo mašina | house_has_wahing_machine=1
+  # - house_has_furniture | type:boolean | Su baldais | house_has_furniture=1
+  # - house_has_phone | type:boolean | Telefono linija | house_has_phone=1
+  # - house_has_tv | type:boolean | Televizorius | house_has_tv=1
+  # - house_has_wc_bath_separate | type:boolean | Tualetas ir vonia atskirai | house_has_wc_bath_separate=1
+  # - house_has_water | type:boolean | Vandentiekis | house_has_water=1
+  # - house_has_local_plumbing | type:boolean | Vietinė kanalizacija | house_has_local_plumbing=1
+  # - house_has_open_kitchen | type:boolean | Virtuvė sujungta su kamb. | house_has_open_kitchen=1
+  # - house_has_bath | type:boolean | Vonia | house_has_bath=1
+  # - house_has_wavin_pipes | type:boolean | Wavin vamzdžiai | house_has_wavin_pipes=1
+  # - house_has_refridgerator | type:boolean | Šaldytuvas | house_has_refridgerator=1
+  # - house_has_near_water | type:boolean | Šalia vandens tvenkinio | house_has_near_water=1
+  # - house_has_armed_doors | type:boolean | Šarvuotos durys | house_has_armed_doors=1
+  # - house_has_fireside | type:boolean | Židinys | house_has_fireside=1med_doors=1
+  # - house_has_fireside | type:boolean | Židinys | flat_has_fireside=1
+  # - house_heating | type:Array | Šildymas | house_heating[]=central&flat_heating[]=electric | Galimos reikšmės:
+  #   - central | Centrinis
+  #   - gas |Dujinis
+  #   - electric | Elektrinis
+  #   - solid_fuel | Kietu kuru
+  #   - liquid_fuel | Skystu kuru
+  #   - geo | Geoterminis
+  #   - other | Kita
+  # - house_equipment | type:Array | Įrengimas | house_equipment[]=full&house_equipment[]=part | Galimos reikšmės:
+  #   - full | Pilnai įrengtas
+  #   - part | Dalinė apdaila
+  #   - roofed_box | Neįrengtas/Statomas
+  #   - other | Kita
+  # ==== Komercinių patalpų specifiniai atributai:
+  # - commercial_has_security | type:boolean | Apsauga | commercial_has_security=1
+  # - commercial_has_separate_entryway | type:boolean | Atskiras įėjimas | commercial_has_separate_entryway=1
+  # - commercial_has_balcony | type:boolean | Balkonas | commercial_has_balcony=1
+  # - commercial_has_kitchen | type:boolean | Buitinė technika | commercial_has_kitchen=1
+  # - commercial_has_detail_plan | type:boolean | Detalus planas | commercial_has_detail_plan=1
+  # - commercial_has_gas | type:boolean | Dujos | commercial_has_gas=1
+  # - commercial_has_shower | type:boolean | Dušas | commercial_has_shower=1
+  # - commercial_has_electricity | type:boolean | Elektra | commercial_has_electricity=1
+  # - commercial_has_good_access | type:boolean | Geras privažiavimas | commercial_has_good_access=1
+  # - commercial_has_internet | type:boolean | Internetas | commercial_has_internet=1
+  # - commercial_has_conference_hall | type:boolean | Konferencijų salė pastate | commercial_has_conference_hall=1
+  # - commercial_has_cargo_elevator | type:boolean | Krovininis liftas | commercial_has_cargo_elevator=1
+  # - commercial_has_lift | type:boolean | Liftas | commercial_has_lift=1
+  # - commercial_has_local_feeding | type:boolean | Maitinimo įstaiga pastate | commercial_has_local_feeding=1
+  # - commercial_has_room_conditioning | type:boolean | Patalpų kondicionavimas | commercial_has_room_conditioning=1
+  # - commercial_has_alarm | type:boolean | Signalizacija | commercial_has_alarm=1
+  # - commercial_has_furniture | type:boolean | Su baldais | commercial_has_furniture=1
+  # - commercial_has_phone | type:boolean | Telefono linija | commercial_has_phone=1
+  # - commercial_has_water | type:boolean | Vandentiekis | commercial_has_water=1
+  # - commercial_heating | type:Array | Šildymas | commercial_heating[]=central&commercial_heating[]=electric | Galimos reikšmės:
+  #   - central | Centrinis
+  #   - city | Miesto
+  #   - gas |Dujinis
+  #   - electric | Elektrinis
+  #   - solid_fuel | Kietu kuru
+  #   - liquid_fuel | Skystu kuru
+  #   - geo | Geoterminis
+  #   - other | Kita
+  # - commercial_equipment | type:Array | Įrengimas | commercial_equipment[]=full&commercial_equipment[]=part | Galimos reikšmės:
+  #   - full | Pilnai įrengtas
+  #   - part | Dalinė apdaila
+  #   - no_equipment | Neįrengtas
   # ==== Duomenų ribojimo, puslapiavimo parametrai:
   # - per_page | type:integer, max=250 | Grąžinamų NT objektų kiekis.
   # - page | type:integer | Puslapio nr. SQL offset t.y.  sql išraiška 'LIMIT 10 OFFSET 10' yra lygi parametrams 'page = 2, per_page = 10'
